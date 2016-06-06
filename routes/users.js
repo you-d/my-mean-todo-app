@@ -10,17 +10,32 @@ var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
 var pwdHashSalt = require('password-hash-and-salt');
 
+/*** db config files ***/
+var usersDbConfig = require(path.join(__dirname, '../config/db'));
+
 var user = require(path.join(__dirname, '../models/user'));
 var userModel = mongoose.model('User');
 
 /*** using the mongodb session ***/
-router.use(session( {store: new mongoStore( {url: 'mongodb://localhost/my-mean-todo-sessions-db'} ),
-                     secret: "asifyas8gb3j4guyfyca99$~%#%^RQ@",
-                     saveUnitialized: true,
-                     resave: true
-                    }
-                  )
-);
+if (router.get('env') === 'development') {
+    router.use(session( {store: new mongoStore( {url: usersDbConfig.devUrl} ),
+                         secret: usersDbConfig.sessionSecret,
+                         saveUnitialized: true,
+                         resave: true
+                        }
+                      )
+    );
+}
+if (router.get('env') === 'production') {
+    router.use(session( {store: new mongoStore( {url: usersDbConfig.prodUrl} ),
+                         secret: usersDbConfig.sessionSecret,
+                         saveUnitialized: true,
+                         resave: true
+                        }
+                      )
+    );
+}
+
 router.use(passport.initialize());
 router.use(passport.session());
 

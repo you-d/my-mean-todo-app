@@ -14,7 +14,7 @@ var methodOverride = require('method-override');
 var app = express();
 
 /*** db config files ***/
-var usersDbConfig = require(path.join(__dirname, '/config/db-users'));
+var usersDbConfig = require(path.join(__dirname, '/config/db'));
 
 var indexRoute = require('./routes/index');
 var usersRoute = require('./routes/users');
@@ -34,23 +34,43 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-/*** using the mongodb session ***/
-app.use(session( {store: new mongoStore( {url: 'mongodb://localhost/my-mean-todo-sessions-db'} ),
-                     secret: "asifyas8gb3j4guyfyca99$~%#%^RQ@",
-                     saveUnitialized: true,
-                     resave: true
-                    }
-                  )
-);
-
 /*** mongodb connection string ***/
-mongoose.connect(usersDbConfig.url, function(err) {
-  if(err) {
-      console.log('mongodb connection error for localhost:3000/' + usersDbConfig.routeName, err);
-  } else {
-      console.log('mongodb connection successful. API query URL: localhost:3000/' + usersDbConfig.routeName);
-  }
-});
+if (app.get('env') === 'development') {
+    mongoose.connect(usersDbConfig.devUrl, function(err) {
+      if(err) {
+          console.log('mongodb connection error for localhost:3000', err);
+      } else {
+          console.log('mongodb connection successful. API query URL: localhost:3000');
+      }
+    });
+
+    /*** using the mongodb session ***/
+    app.use(session( {store: new mongoStore( {url: usersDbConfig.devUrl} ),
+                      secret: usersDbConfig.sessionSecret,
+                      saveUnitialized: true,
+                      resave: true
+                     }
+                  )
+    );
+}
+if (app.get('env') === 'production') {
+    mongoose.connect(usersDbConfig.prodUrl, function(err) {
+      if(err) {
+          console.log('mongodb connection error.' + usersDbConfig.routeName, err);
+      } else {
+          console.log('mongodb connection successful.' + usersDbConfig.routeName);
+      }
+    });
+
+    /*** using the mongodb session ***/
+    app.use(session( {store: new mongoStore( {url: usersDbConfig.prodUrl} ),
+                      secret: usersDbConfig.sessionSecret,
+                      saveUnitialized: true,
+                      resave: true
+                     }
+                   )
+    );
+}
 
 /*** mapping express routes ***/
 app.use('/users', usersRoute.router);
@@ -102,12 +122,14 @@ if (app.get('env') === 'development') {
   });
 }
 /** production error handler - no stacktraces leaked to user **/
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
+if (app.get('env') === 'production') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: {}
+    });
   });
-});
+}
 
 module.exports = app;
