@@ -1,0 +1,287 @@
+@import url("http://fonts.googleapis.com/css?family=Anonymous+Pro:700,400&subset=latin,latin-ext");
+.inheritance_1, html, body {
+  height: 100%; }
+
+.inheritance_2, .custom-masthead-right-col a:hover, .tab0-user-info-panel a:hover {
+  font-style: italic;
+  color: #777;
+  text-decoration: none;
+  cursor: pointer; }
+
+.user-form-input, .register-form-right-col input {
+  border-radius: 0px;
+  height: 31px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-bottom: 1px solid #777;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px; }
+
+.user-form-input-error {
+  border-bottom-color: red !important;
+  /* for input field */
+  color: red !important;
+  /* for input label */ }
+
+.user-form-btn, .register-form-btn-left-col button, .register-form-btn-ctr-col button, .register-form-btn-right-col button {
+  background-color: #e6e6e6;
+  color: #777; }
+
+body {
+  background: linear-gradient(-45deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+  font-family: "Anonymous Pro", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
+  overflow-x: hidden;
+  color: #777; }
+
+hr {
+  border-top: 1px solid #000; }
+
+a {
+  color: #00B7FF; }
+
+#main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto; }
+
+.noscript div {
+  width: 100%;
+  text-align: center; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5; }
+  .footer .container p {
+    text-align: center;
+    margin: 20px 0; }
+
+.nav > li {
+  cursor: pointer; }
+
+.nav-justified {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px; }
+  @media print, screen and (min-width: 768px) {
+    .nav-justified {
+      max-height: 52px; } }
+  .nav-justified > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #777;
+    text-align: center;
+    background-color: #e5e5e5;
+    /* Old browsers */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+    background-image: -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+    background-image: linear-gradient(to bottom, #f5f5f5 0%, #e5e5e5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$frmColour', endColorstr='$toColour', GradientType=0);
+    /* IE6-9 */
+    background-repeat: repeat-x;
+    /* Repeat the gradient */
+    border-bottom: 1px solid #d5d5d5; }
+    @media print, screen and (min-width: 768px) {
+      .nav-justified > li > a {
+        border-right: 1px solid #d5d5d5;
+        border-left: 1px solid #fff; } }
+  .nav-justified > .active > a {
+    background-color: #ddd;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15); }
+    .nav-justified > .active > a:hover, .nav-justified > .active > a:focus {
+      background-color: #ddd;
+      background-image: none;
+      -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15);
+      box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15); }
+  .nav-justified > li:first-child > a {
+    border-radius: 5px 5px 0 0; }
+    @media print, screen and (min-width: 768px) {
+      .nav-justified > li:first-child > a {
+        border-left: 0;
+        border-radius: 5px 0 0 5px; } }
+  .nav-justified > li:last-child > a {
+    border-bottom: 0;
+    border-radius: 0 0 5px 5px; }
+    @media print, screen and (min-width: 768px) {
+      .nav-justified > li:last-child > a {
+        border-right: 0;
+        border-radius: 0 5px 5px 0; } }
+
+@media print, screen and (min-width: 768px) {
+  #angularjs-test-fixed-navbar {
+    display: none; } }
+
+@media print, screen and (max-width: 767px) {
+  #angularjs-test-fixed-navbar {
+    display: block; } }
+
+.content-block-mobile-view-adjuster {
+  height: 2.5em; }
+  @media print, screen and (min-width: 768px) {
+    .content-block-mobile-view-adjuster {
+      display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .content-block-mobile-view-adjuster {
+      display: block; } }
+
+@media print, screen and (max-width: 767px) {
+  .masthead {
+    display: none; } }
+
+.custom-masthead-right-col {
+  text-align: right;
+  margin-top: 23px; }
+
+.register-form-left-col {
+  text-align: right;
+  padding-top: 5px; }
+  @media print, screen and (max-width: 767px) {
+    .register-form-left-col {
+      text-align: left !important;
+      padding-bottom: 5px; } }
+
+.register-form-right-col {
+  margin-bottom: 10px; }
+
+.register-form-btn-left-col, .register-form-btn-ctr-col, .register-form-btn-right-col {
+  padding-top: 20px; }
+
+.register-form-btn-ctr-col > div {
+  margin: 0 auto;
+  width: 35px;
+  padding-top: 8px; }
+
+@media print, screen and (min-width: 768px) {
+  .register-form-btn-ctr-col {
+    display: block; } }
+
+@media print, screen and (max-width: 992px) {
+  .register-form-btn-ctr-col {
+    display: none; } }
+
+@media print, screen and (max-width: 767px) {
+  .register-form-btn-ctr-col {
+    display: none; } }
+
+.register-form-btn-left-col {
+  overflow: hidden; }
+  .register-form-btn-left-col button {
+    float: right; }
+
+.login-form-label, .login-form-username-label, .login-form-password-label, .login-form-password-label-narrow-view, .login-form-label-ctr-col {
+  padding-top: 5px; }
+
+.login-form-username-label {
+  text-align: right; }
+  @media print, screen and (max-width: 992px) {
+    .login-form-username-label {
+      text-align: left;
+      margin: 0 0 5px 0; } }
+  @media print, screen and (max-width: 767px) {
+    .login-form-username-label {
+      text-align: left;
+      margin: 10px 0 5px 0; } }
+
+@media print, screen and (min-width: 768px) {
+  .login-form-password-label {
+    display: block; } }
+
+@media print, screen and (max-width: 992px) {
+  .login-form-password-label {
+    display: none; } }
+
+@media print, screen and (max-width: 767px) {
+  .login-form-password-label {
+    display: none; } }
+
+@media print, screen and (min-width: 768px) {
+  .login-form-password-label-narrow-view {
+    display: none; } }
+
+@media print, screen and (max-width: 992px) {
+  .login-form-password-label-narrow-view {
+    display: block;
+    margin: 10px 0 5px 0; } }
+
+@media print, screen and (max-width: 767px) {
+  .login-form-password-label-narrow-view {
+    display: block;
+    margin: 10px 0 5px 0; } }
+
+@media print, screen and (min-width: 768px) {
+  .login-form-password-input {
+    text-align: right; } }
+
+@media print, screen and (max-width: 992px) {
+  .login-form-password-input {
+    text-align: left; } }
+
+@media print, screen and (max-width: 767px) {
+  .login-form-password-input {
+    text-align: left; } }
+
+.login-form-label-ctr-col {
+  margin: 0 auto;
+  width: 45px; }
+  @media print, screen and (max-width: 992px) {
+    .login-form-label-ctr-col {
+      display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .login-form-label-ctr-col {
+      display: none; } }
+
+.login-form-btn-section {
+  margin-top: 20px; }
+  .login-form-btn-section > div:first-child {
+    display: none; }
+    @media print, screen and (max-width: 992px) {
+      .login-form-btn-section > div:first-child {
+        display: block; } }
+
+.login-form-btn-ctr-col {
+  margin-top: 20px; }
+  .login-form-btn-ctr-col > div {
+    margin: 0 auto;
+    width: 33px;
+    padding-top: 8px; }
+  @media print, screen and (min-width: 768px) {
+    .login-form-btn-ctr-col {
+      display: block; } }
+  @media print, screen and (max-width: 992px) {
+    .login-form-btn-ctr-col {
+      display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .login-form-btn-ctr-col {
+      display: none; } }
+
+@media print, screen and (min-width: 768px) {
+  .top-announcement-bar {
+    margin-bottom: 15px; } }
+
+@media print, screen and (max-width: 767px) {
+  .top-announcement-bar {
+    padding-top: 25px; } }
+
+.bottom-announcement-bar {
+  margin-top: 30px; }
+  .bottom-announcement-bar > div {
+    margin: 0 auto;
+    width: 270px; }
+
+.tab0-user-info-panel {
+  text-align: center;
+  margin-bottom: 8px;
+  cursor: default !important; }

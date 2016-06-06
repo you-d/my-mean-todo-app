@@ -1,0 +1,86 @@
+<!-- Nav Bar -->
+<section data-ng-controller="MainPageController">
+    <!-- fixed navbar for mobile view (which is hidden until users scroll down the page) -->
+    <nav id="angularjs-test-fixed-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Site Title and nav menu for mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" data-ng-bind="siteTitle"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="tab0-user-info-panel">
+                        <div data-ng-if="isUserLoggedIn">
+                            <span>
+                                Hello, <span data-ng-bind="loggedUserInfo.firstname"></span>
+                            </span>
+                            &nbsp;
+                            <span>
+                                <a class="text-muted" data-ng-click="processUserLogout()">[ sign out ]</a>
+                            </span>
+                        </div>
+                        <div data-ng-if="!isUserLoggedIn">
+                            <span><a href="{{ urlRegister }}" class="text-muted">[ register ]</a></span>
+                            <span><a href="{{ urlLogin }}" class="text-muted">[ sign in ]</a></span>
+                        </div>
+                    </li>
+                    <li class="tab1-nav-btn active">
+                        <a data-ng-click="clickNavBtn1('narrow')" data-ng-bind="labelTab1"></a>
+                    </li>
+                    <li class="tab2-nav-btn">
+                        <a data-ng-click="clickNavBtn2('narrow')" data-ng-bind="labelTab2"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+      <div class="masthead">
+          <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                  <h2 class="text-muted" data-ng-bind="siteTitle"></h2>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-muted custom-masthead-right-col">
+                  <div data-ng-if="!isUserLoggedIn">
+                      <span><a href="{{ urlRegister }}" class="text-muted">[ register ]</a></span>
+                      &nbsp;
+                      <span><a href="{{ urlLogin }}" class="text-muted">[ sign in ]</a></span>
+                  </div>
+                  <div data-ng-if="isUserLoggedIn">
+                      <span>
+                          Hello, <span data-ng-bind="loggedUserInfo.firstname"></span>
+                      </span>
+                      &nbsp;
+                      <span>
+                          <a class="text-muted" data-ng-click="processUserLogout()">[ sign out ]</a>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <!-- justified navbar for desktop / tablet view -->
+          <nav>
+              <ul class="nav nav-justified">
+                  <li class="tab1-nav-btn active">
+                      <a data-ng-click="clickNavBtn1('wide')" data-ng-bind="labelTab1"></a>
+                  </li>
+                  <li class="tab2-nav-btn">
+                      <a data-ng-click="clickNavBtn2('wide')" data-ng-bind="labelTab2"></a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+    </div>
+    <!-- CONTENTS -->
+    <div class="container">
+        <br>
+        <div class="content-block-mobile-view-adjuster"></div>
+        <div data-ng-include="'get_partials/main-tab1.html'" data-ng-show="showContainer == 1"></div>
+        <div data-ng-include="'get_partials/main-tab2.html'" data-ng-show="showContainer == 2"></div>
+    </div>
+</section>

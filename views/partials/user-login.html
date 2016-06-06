@@ -1,0 +1,90 @@
+<section data-ng-controller="UserAuthController">
+  <!-- HEADER -->
+  <div data-ng-include="'get_partials/user-header.html'"></div>
+  <!-- CONTENT -->
+  <div class="container">
+      <br>
+      <div class="content-block-mobile-view-adjuster"></div>
+      <form name="userLoginForm" role="form" novalidate
+            data-ng-submit="processUserLogin(userData, userLoginForm.$valid)">
+          <!-- announcement blocks -->
+          <div class="row" data-ng-show="showNewUserRegisteredMsg">
+              <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+              <div class="col-lg-10 col-md-10 top-announcement-bar">
+                <div class="alert alert-info">
+                  You have successfully created your account. Please sign in to access your To Do list.
+                </div>
+              </div>
+          </div>
+          <div class="row" data-ng-show="show401ErrorMsg">
+              <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+              <div class="col-lg-10 col-md-10 top-announcement-bar">
+                <div class="alert alert-danger">
+                  Invalid login credential.
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 login-form-username-label">
+                <label class="control-label" for="inputUsername"
+                       data-ng-class="{ 'user-form-input-error': userLoginForm.inputUsername.$invalid &&
+                                                                 userLoginForm.$submitted }">
+                  [ username ]
+                </label>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <input type="email" name="inputUsername" class="form-control user-form-input" placeholder=""
+                       data-ng-model="userData.username" required
+                       data-ng-class="{ 'user-form-input-error': userLoginForm.inputUsername.$invalid &&
+                                                                 userLoginForm.$submitted }"></input>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                  <div class="login-form-label-ctr-col">-and-</div>
+                  <div class="login-form-password-label-narrow-view">
+                    <label class="control-label" for="inputPassword"
+                           data-ng-class="{ 'user-form-input-error': userLoginForm.inputPassword.$invalid &&
+                                                                     userLoginForm.$submitted }">
+                      [ password ]
+                    </label>
+                  </div>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <input type="password" name="inputPassword" class="form-control user-form-input login-form-password-input"
+                       placeholder="" data-ng-model="userData.password" required
+                       data-ng-class="{ 'user-form-input-error': userLoginForm.inputPassword.$invalid &&
+                                                                 userLoginForm.$submitted }"></input>
+              </div>
+              <div class="col-lg-2 col-md-2 login-form-password-label">
+                <label class="control-label" for="inputPassword"
+                       data-ng-class="{ 'user-form-input-error': userLoginForm.inputPassword.$invalid &&
+                                                                 userLoginForm.$submitted }">
+                  [ password ]
+                </label>
+              </div>
+          </div>
+          <div class="row login-form-btn-section">
+              <div class="col-sm-1"></div>
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 register-form-btn-left-col">
+                  <button type="submit" class="btn btn-default">sign in</button>
+              </div>
+              <div class="col-lg-2 col-md-2 login-form-btn-ctr-col">
+                  <div class="login-form-btn-ctr-col">-or-</div>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 register-form-btn-right-col">
+                  <button class="btn btn-default" data-ng-click="clickRegisterExtLink()">register</button>
+              </div>
+          </div>
+          <!-- announcement bar #2 -->
+          <div class="row" data-ng-show="userLoginForm.inputUsername.$error.email &&
+                                         userLoginForm.$submitted">
+              <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+              <div class="col-lg-10 col-md-10 bottom-announcement-bar">
+                <div>
+                  Hint: Your email address is your username.
+                </div>
+              </div>
+          </div>
+      </form>
+  </div>
+</section>

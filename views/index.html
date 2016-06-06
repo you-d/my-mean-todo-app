@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myMeanTodoApp" data-ng-controller="LayoutController">
+  <head>
+    <title data-ng-bind="siteTitle"></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1", maximum-scale="1", user-scalable="no">
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/dist/style.bundle.css' />
+    <base href="/">
+  </head>
+  <body>
+    <noscript class="noscript">
+        <style type="text/css">#main {display: none;}</style>
+        <div>
+            For full functionality of this site, it is necessary to enable the Javascript.
+            Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+            instructions</a> on how to enable Javascript in your web browser.
+        </div>
+    </noscript>
+    <div data-ng-view></div>
+    <div data-ng-init="exportedData('userIsAuthenticatedResultArray', '<%= checkUserIsAuthenticatedResult %>')"></div>
+    <!-- STICKY FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Sticky Footer here.</p>
+        </div>
+    </footer>
+    <!-- Libraries -->
+    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/dist/libCombo.bundle.js"></script>
+    <!-- Angular App -->
+    <script type="text/javascript" src="/dist/ngApp.bundle.js"></script>
+  </body>
+</html>
