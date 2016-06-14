@@ -1,2 +1,92 @@
-<h3>Content For Tab #1</h3>
-<p>Under Construction</p>
+<div class="container space-for-footer" data-ng-controller="TodoListController">
+    <div class="content-block-mobile-view-adjuster"></div>
+    <!-- Todo List - Add new task and search list -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-inline">
+        <form name="addTaskForm" data-ng-submit="addNewTodoSubmitAction(addTaskForm.$valid)" role="form" novalidate>
+          <label class="control-label" for="newTaskInputField"
+                 data-ng-class="{ 'user-form-input-error': invalidInputAddNewTodoInputField }">
+              [ new task ]
+          </label>
+          <!-- wide + medium viewport -->
+          <span class="main-tab-1-create-task-menu">
+              <!-- allow alphanumeric, whitespace, dash, "()" -->
+              <input type="text" name="newTaskInputField" data-ng-model="newTaskNgModel"
+                     class="form-control user-form-input main-tab1-custom-input-1-left" required pattern="[a-zA-Z0-9\s\-\(\)]+"
+                     data-ng-class="{ 'user-form-input-error': invalidInputAddNewTodoInputField }">
+
+              <span data-ng-if="isUserLoggedIn">
+                <button type="submit" class="btn btn-default user-form-btn-non-hover logged-in-user-form-btn">
+                  <span data-ng-bind="createBtnText"></span>
+                </button>
+              </span>
+              <span data-ng-if="!isUserLoggedIn">
+                <button type="submit" class="btn btn-default user-form-btn-non-hover not-logged-in-user-form-btn"
+                        data-ng-mouseenter="alterCreateBtnText('mouseenter')" data-ng-mouseleave="alterCreateBtnText('mouseleave')">
+                  <span data-ng-bind="createBtnText"></span>
+                </button>
+              </span>
+          </span>
+          <!-- narrow viewport -->
+          <div class="input-group main-tab-1-create-task-menu-narrow">
+              <!-- allow alphanumeric, whitespace, dash, "()" -->
+              <input type="text" name="newTaskInputField" data-ng-model="newTaskNgModel"
+                     class="form-control user-form-input main-tab1-custom-input-1-left" required pattern="[a-zA-Z0-9\s\-\(\)]+"
+                     data-ng-class="{ 'user-form-input-error': invalidInputAddNewTodoInputField }">
+              <span class="input-group-btn">
+                  <span data-ng-if="isUserLoggedIn">
+                    <button type="submit" class="btn btn-default user-form-btn-non-hover logged-in-user-form-btn">
+                      <span data-ng-bind="createBtnText"></span>
+                    </button>
+                  </span>
+                  <span data-ng-if="!isUserLoggedIn">
+                    <button type="submit" class="btn btn-default user-form-btn-non-hover not-logged-in-user-form-btn"
+                            data-ng-mouseenter="alterCreateBtnText('mouseenter')" data-ng-mouseleave="alterCreateBtnText('mouseleave')">
+                      <span data-ng-bind="createBtnText"></span>
+                    </button>
+                  </span>
+                  <!--
+                  <button type="submit" class="btn btn-default user-form-btn-non-hover"
+                          data-ng-class="{ 'logged-in-user-form-btn': isUserLoggedIn,
+                                           'not-logged-in-user-form-btn': !isUserLoggedIn }">
+                      Create
+                  </button>
+                  -->
+              </span>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-inline">
+        <label class="control-label">[ search ]</label>
+        <input type="text" ng-model="searchFilterNgModel.name" class="form-control user-form-input main-tab1-custom-input-1-right">
+      </div>
+    </div>
+    <br>
+    <!-- Todo List - Listing -->
+    <div class="row todo-list-row" ng-repeat="aTodo in resourceTodos | filter: searchFilterNgModel">
+        <!-- Todo row - default mode -->
+        <div ng-show="!editMode[$index]">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 todo-list-entry-title">
+                <a href="#" data-ng-click="editDetailTitleLinkClicked(aTodo._id, $index)"><span data-ng-bind="aTodo.name"></span></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+              <button ng-click="defaultModeEditButtonClicked($index)" class="btn btn-default" data-ng-disabled="!isUserLoggedIn">Edit</button>
+              <button ng-click="defaultModeDeleteButtonClicked($index)" class="btn btn-warning" data-ng-disabled="!isUserLoggedIn">Delete</button>
+            </div>
+        </div>
+        <!-- Todo List - edit title mode -->
+        <div ng-show="editMode[$index]">
+            <form name="editTaskForm" ng-submit="editUpdateTodoSubmitAction(editTaskForm.$valid, $index)" novalidate>
+                <div class="form-group custom-form-group" ng-class="{ 'has-error': invalidInputEditUpdateTodoInputField }">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <input type="text" ng-model="aTodo.name" class="form-control user-form-input" required pattern="[a-zA-Z0-9\s\-\(\)]+">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                        <button type="submit" class="btn btn-primary btn-narrow-view-make-it-small" data-ng-disabled="!isUserLoggedIn">Update</button>
+                        <button ng-click="editCancelTodoAction($index)" class="btn btn-default btn-narrow-view-make-it-small" data-ng-disabled="!isUserLoggedIn">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

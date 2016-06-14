@@ -4,6 +4,7 @@ var gulpSass = require('gulp-sass');
 var gulpRename = require('gulp-rename');
 var gulpWebpack = require('webpack-stream');
 var gulpDelete = require('del');
+var karma = require('karma').Server;
 
 /* Convert sass files into css files */
 gulp.task('task-css', function() {
@@ -39,6 +40,23 @@ gulp.task('task-cleaning', ['task-js'] , function() {
 /* Auto run the building process */
 gulp.task('task-watchers', function() {
     gulp.watch(path.join(__dirname, '/public/frontend/*.scss'), ['task-css']);
+});
+
+/* Run karma test once, & then exit */
+gulp.task('task-karma', function(done) {
+    new karma(
+        { configFile : path.join(__dirname, '/karma.conf.js'),
+          singleRun : true },
+        done
+    ).start();
+});
+
+/* Alternatively, run karma test, watch for file changes, and re-run tests on each change */
+gulp.task('task-karma-tdd', function(done) {
+    new karma(
+        { configFile : path.join(__dirname, '/karma.conf.js') },
+        done
+    ).start();
 });
 
 /* All Set! */

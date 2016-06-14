@@ -2,15 +2,15 @@
   <!-- HEADER -->
   <div data-ng-include="'get_partials/user-header.html'"></div>
   <!-- CONTENT -->
-  <div class="container">
+  <div class="container space-for-footer">
       <br>
       <div class="content-block-mobile-view-adjuster"></div>
       <form name="userRegistrationForm" role="form" novalidate
             data-ng-submit="processUserRegistration(userData, userRegistrationForm.$valid)">
           <div data-ng-bind="requiredIsNotValid"></div>
           <div class="row form-group">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
-              <div class="col-lg-2 col-md-2 col-sm-2 register-form-left-col">
+              <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 col-sm-3 register-form-left-col">
                 <label class="control-label" for="inputEmail"
                        data-ng-class="{ 'user-form-input-error': userRegistrationForm.inputEmail.$invalid &&
                                                                  userRegistrationForm.$submitted }">
@@ -25,8 +25,8 @@
               </div>
           </div>
           <div class="row form-group">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
-              <div class="col-lg-2 col-md-2 col-sm-2 register-form-left-col">
+              <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 col-sm-3 register-form-left-col">
                 <label class="control-label" for="inputFirstname"
                        data-ng-class="{ 'user-form-input-error': userRegistrationForm.inputFirstname.$invalid &&
                                                                  userRegistrationForm.$submitted }">
@@ -41,8 +41,8 @@
               </div>
           </div>
           <div class="row form-group">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
-              <div class="col-lg-2 col-md-2 col-sm-2 register-form-left-col">
+              <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 col-sm-3 register-form-left-col">
                 <label class="control-label" for="inputLastname"
                        data-ng-class="{ 'user-form-input-error': userRegistrationForm.inputLastname.$invalid &&
                                                                  userRegistrationForm.$submitted }">
@@ -57,8 +57,8 @@
               </div>
           </div>
           <div class="row form-group">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
-              <div class="col-lg-2 col-md-2 col-sm-2 register-form-left-col">
+              <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 col-sm-3 register-form-left-col">
                 <label class="control-label" for="inputPassword"
                        data-ng-class="{ 'user-form-input-error': userRegistrationForm.inputPassword.$invalid &&
                                                                  userRegistrationForm.$submitted }">
@@ -73,8 +73,8 @@
               </div>
           </div>
           <div class="row form-group">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
-              <div class="col-lg-2 col-md-2 col-sm-2 register-form-left-col">
+              <div class="col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+              <div class="col-lg-2 col-md-2 col-sm-3 register-form-left-col">
                 <label class="control-label" for="inputConfirmpwd"
                        data-ng-class="{ 'user-form-input-error': userRegistrationForm.inputConfirmpwd.$invalid &&
                                                                  userRegistrationForm.$submitted }">

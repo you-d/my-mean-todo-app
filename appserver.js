@@ -18,6 +18,7 @@ var usersDbConfig = require(path.join(__dirname, '/config/db'));
 
 var indexRoute = require('./routes/index');
 var usersRoute = require('./routes/users');
+var todoRoute = require('./routes/todo');
 
 /*** view engine setup ***/
 app.set('views', path.join(__dirname, 'views'));
@@ -73,6 +74,7 @@ if (app.get('env') === 'production') {
 }
 
 /*** mapping express routes ***/
+app.use('/todos', todoRoute);
 app.use('/users', usersRoute.router);
 app.use('/', usersRoute.checkUserIsAuthenticated, indexRoute);
 

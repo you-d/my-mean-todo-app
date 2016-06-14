@@ -2,22 +2,28 @@
 .inheritance_1, html, body {
   height: 100%; }
 
-.inheritance_2, .custom-masthead-right-col a:hover, .tab0-user-info-panel a:hover {
+.inheritance_2, .custom-masthead-right-col a:hover, .tab0-user-info-panel a:hover, .main-tab-1-detail-page-last-row a:hover {
   font-style: italic;
   color: #777;
   text-decoration: none;
   cursor: pointer; }
 
-.user-form-input, .register-form-right-col input {
+.inheritance_3, .user-form-input, .register-form-right-col input, .user-form-text-area {
   border-radius: 0px;
   height: 31px;
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none;
-  -webkit-box-shadow: none;
+  -webkit-box-shadow: none; }
+
+.user-form-input, .register-form-right-col input {
   border-bottom: 1px solid #777;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px; }
+
+.user-form-text-area {
+  border: 1px solid #777;
+  resize: none; }
 
 .user-form-input-error {
   border-bottom-color: red !important;
@@ -25,9 +31,37 @@
   color: red !important;
   /* for input label */ }
 
-.user-form-btn, .register-form-btn-left-col button, .register-form-btn-ctr-col button, .register-form-btn-right-col button {
-  background-color: #e6e6e6;
-  color: #777; }
+.user-form-btn-non-hover, .user-form-btn, .register-form-btn-left-col button, .register-form-btn-ctr-col button, .register-form-btn-right-col button {
+  background-color: #E6E6E6;
+  color: #777;
+  border-color: #46B8DA; }
+
+.user-form-btn:hover, .register-form-btn-left-col button:hover, .register-form-btn-ctr-col button:hover, .register-form-btn-right-col button:hover {
+  background-color: #46B8DA;
+  color: #FFF;
+  border-color: #46B8DA; }
+
+.logged-in-user-form-btn:hover {
+  background-color: #46B8DA;
+  color: #FFF;
+  border-color: #46B8DA; }
+
+@media print, screen and (min-width: 768px) {
+  .not-logged-in-user-form-btn {
+    width: 15%; } }
+
+@media print, screen and (max-width: 992px) {
+  .not-logged-in-user-form-btn {
+    width: 20%; } }
+
+@media print, screen and (max-width: 767px) {
+  .not-logged-in-user-form-btn {
+    width: 100%; } }
+
+.not-logged-in-user-form-btn:hover {
+  background-color: #449D44;
+  color: #FFF;
+  border-color: #398439; }
 
 body {
   background: linear-gradient(-45deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
@@ -54,8 +88,11 @@ a {
   width: 100%;
   text-align: center; }
 
+.custom-form-group {
+  margin-bottom: 0px; }
+
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -63,6 +100,12 @@ a {
   .footer .container p {
     text-align: center;
     margin: 20px 0; }
+
+.todo-list-row {
+  margin-bottom: 5px; }
+
+.space-for-footer {
+  margin-bottom: 80px; }
 
 .nav > li {
   cursor: pointer; }
@@ -120,6 +163,7 @@ a {
         border-right: 0;
         border-radius: 0 5px 5px 0; } }
 
+/*** mobile header ***/
 @media print, screen and (min-width: 768px) {
   #angularjs-test-fixed-navbar {
     display: none; } }
@@ -127,6 +171,11 @@ a {
 @media print, screen and (max-width: 767px) {
   #angularjs-test-fixed-navbar {
     display: block; } }
+
+/*** default header ***/
+@media print, screen and (max-width: 767px) {
+  .masthead {
+    display: none; } }
 
 .content-block-mobile-view-adjuster {
   height: 2.5em; }
@@ -136,10 +185,6 @@ a {
   @media print, screen and (max-width: 767px) {
     .content-block-mobile-view-adjuster {
       display: block; } }
-
-@media print, screen and (max-width: 767px) {
-  .masthead {
-    display: none; } }
 
 .custom-masthead-right-col {
   text-align: right;
@@ -285,3 +330,41 @@ a {
   text-align: center;
   margin-bottom: 8px;
   cursor: default !important; }
+
+@media print, screen and (min-width: 768px) {
+  .main-tab-1-create-task-menu input {
+    width: 60% !important; } }
+
+@media print, screen and (max-width: 992px) {
+  .main-tab-1-create-task-menu input {
+    width: 45% !important; } }
+
+@media print, screen and (max-width: 767px) {
+  .main-tab-1-create-task-menu {
+    display: none !important; } }
+
+@media print, screen and (min-width: 768px) {
+  .main-tab-1-create-task-menu-narrow {
+    /* width: 85% !important; */
+    display: none !important; } }
+
+.main-tab1-custom-input-1-left {
+  width: 97% !important; }
+
+@media print, screen and (min-width: 768px) {
+  .main-tab1-custom-input-1-right {
+    width: 75% !important; } }
+
+.main-tab-1-detail-page-last-row {
+  margin-top: 10px;
+  margin-left: 30px; }
+
+.todo-list-entry-title {
+  padding-top: 7px; }
+
+@media print, screen and (max-width: 767px) {
+  .btn-narrow-view-make-it-small {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px; } }

@@ -27,6 +27,7 @@
     "angular-route": "1.5.6",
     "angular-resource": "1.5.6",
     "angular-cookies": "1.5.6",
+    "angular-mocks": "1.5.6",
     "gulp": "3.9.1",
     "gulp-sass": "2.3.1",
     "gulp-rename": "1.2.2",
@@ -39,6 +40,10 @@
     "extract-text-webpack-plugin": "1.0.1",
     "del": "2.2.0",
     "validator": "5.3.0",
-    "normalize.css": "4.1.1"
+    "normalize.css": "4.1.1",
+    "karma": "0.13.22",
+    "jasmine-core": "2.4.1",
+    "karma-jasmine": "1.0.2",
+    "karma-chrome-launcher": "1.0.1"
   }
 }
