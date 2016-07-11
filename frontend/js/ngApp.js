@@ -36,7 +36,7 @@ meanTodoModule.config(['$routeProvider', '$locationProvider',
 // Constants and Values
 //---------------
 meanTodoModule.constant('siteTitleModuleConst', "My Mean Todo App");
-meanTodoModule.constant('webAppVersionNumberConst',  "-[ver.0.0.2]-");
+meanTodoModule.constant('webAppVersionNumberConst',  "-[ver.0.0.3]-");
 
 //---------------
 // Services
@@ -116,8 +116,8 @@ meanTodoModule.controller('MainPageController',
                           ['$scope', '$rootScope', '$http', 'siteTitleModuleConst',
                           function($scope, $rootScope, $http, siteTitleModuleConst) {
   $scope.siteTitle = siteTitleModuleConst;
-  $scope.labelTab1 = "[ #1 ] Todo List w/ Angular.JS";
-  $scope.labelTab2 = "[ #2 ] Adventure w/ React.JS";
+  $scope.labelTab1 = "[ #1 ] Todo List - Angular";
+  $scope.labelTab2 = "[ #2 ] Adventure - React";
   $scope.labelTab3 = "[ #3 ] Secret Sauce";
   $scope.urlRegister = "/#/register";
   $scope.urlLogin = "/#/login";
