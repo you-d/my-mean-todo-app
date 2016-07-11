@@ -64,8 +64,8 @@
   border-color: #398439; }
 
 body {
-  background: linear-gradient(-45deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
-  background: -webkit-linear-gradient(135deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+  background: linear-gradient(0deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
   font-family: "Anonymous Pro", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
   overflow-x: hidden;
   color: #777; }
@@ -96,7 +96,8 @@ a {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  z-index: 9; }
   .footer .container p {
     text-align: center;
     margin: 20px 0; }
@@ -190,6 +191,27 @@ a {
   text-align: right;
   margin-top: 23px; }
 
+/*** Others ***/
+@media print, screen and (min-width: 768px) {
+  .top-announcement-bar {
+    margin-bottom: 15px; } }
+
+@media print, screen and (max-width: 767px) {
+  .top-announcement-bar {
+    padding-top: 25px; } }
+
+.bottom-announcement-bar {
+  margin-top: 30px; }
+  .bottom-announcement-bar > div {
+    margin: 0 auto;
+    width: 270px; }
+
+.tab0-user-info-panel {
+  text-align: center;
+  margin-bottom: 8px;
+  cursor: default !important; }
+
+/*** Register Page ***/
 .register-form-left-col {
   text-align: right;
   padding-top: 5px; }
@@ -226,6 +248,7 @@ a {
   .register-form-btn-left-col button {
     float: right; }
 
+/*** Login Page ***/
 .login-form-label, .login-form-username-label, .login-form-password-label, .login-form-password-label-narrow-view, .login-form-label-ctr-col {
   padding-top: 5px; }
 
@@ -312,25 +335,7 @@ a {
     .login-form-btn-ctr-col {
       display: none; } }
 
-@media print, screen and (min-width: 768px) {
-  .top-announcement-bar {
-    margin-bottom: 15px; } }
-
-@media print, screen and (max-width: 767px) {
-  .top-announcement-bar {
-    padding-top: 25px; } }
-
-.bottom-announcement-bar {
-  margin-top: 30px; }
-  .bottom-announcement-bar > div {
-    margin: 0 auto;
-    width: 270px; }
-
-.tab0-user-info-panel {
-  text-align: center;
-  margin-bottom: 8px;
-  cursor: default !important; }
-
+/*** Todo List (Tab #1) ***/
 @media print, screen and (min-width: 768px) {
   .main-tab-1-create-task-menu input {
     width: 60% !important; } }
@@ -368,3 +373,1499 @@ a {
     font-size: 12px;
     line-height: 1.5;
     border-radius: 3px; } }
+
+/*** Main Game (Tab #2) ***/
+/* 450 x 353 */
+/* 675 x 529 */
+#mainGameCanvas {
+  border: 1px solid black;
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.tab2 hr {
+  margin: 0; }
+
+.tab2-statusRow {
+  font-size: 16px; }
+  .tab2-statusRow hr {
+    margin-top: 5px;
+    margin-bottom: 15px; }
+
+.tab2-statusRow-bar, .tab2-statusRow-left div:nth-child(3), .tab2-statusRow-general div:nth-child(4) {
+  display: block; }
+  @media print, screen and (min-width: 768px) {
+    .tab2-statusRow-bar, .tab2-statusRow-left div:nth-child(3), .tab2-statusRow-general div:nth-child(4) {
+      font-size: 1.8vw; } }
+  @media print, screen and (max-width: 992px) {
+    .tab2-statusRow-bar, .tab2-statusRow-left div:nth-child(3), .tab2-statusRow-general div:nth-child(4) {
+      font-size: 1.5vw; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-statusRow-bar, .tab2-statusRow-left div:nth-child(3), .tab2-statusRow-general div:nth-child(4) {
+      display: none; } }
+
+.tab2-statusRow-left div {
+  display: inline-block; }
+
+.tab2-statusRow-left div:nth-child(2) {
+  font-size: 24px; }
+  @media print, screen and (max-width: 767px) {
+    .tab2-statusRow-left div:nth-child(2) {
+      font-size: 40px;
+      padding-left: 3px; } }
+
+.tab2-statusRow-general div {
+  display: inline-block; }
+
+@media print, screen and (max-width: 767px) {
+  .tab2-statusRow-general div:nth-child(1) {
+    display: block;
+    padding-bottom: 1px; } }
+
+.tab2-statusRow-general div:nth-child(2) {
+  font-size: 24px; }
+
+.tab2-statusRow-general div:nth-child(3) {
+  font-size: 14px; }
+
+.shared-tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2-row3 {
+  border: 1px solid #000; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .shared-tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2-row3 {
+      border: 0px; }
+      .shared-tab2-gameCanvasRow-col2 > div, .tab2-gameCanvasRow-col2 > div, .tab2-gameCanvasRow-col2-row3 > div {
+        border: 1px solid #000;
+        height: 150px; } }
+  @media print, screen and (max-width: 767px) {
+    .shared-tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2, .tab2-gameCanvasRow-col2-row3 {
+      border: 0px; } }
+  .shared-tab2-gameCanvasRow-col2 > div > div:first-child, .tab2-gameCanvasRow-col2 > div > div:first-child, .tab2-gameCanvasRow-col2-row3 > div > div:first-child {
+    font-size: 24px; }
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+      .shared-tab2-gameCanvasRow-col2 > div > div:first-child, .tab2-gameCanvasRow-col2 > div > div:first-child, .tab2-gameCanvasRow-col2-row3 > div > div:first-child {
+        margin-left: 15px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .tab2-gameCanvasRow-col2 {
+    margin-top: 12px; } }
+
+.tab2-gameCanvasRow-col2 div > div:last-child {
+  text-align: right; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-gameCanvasRow-col2 div > div:last-child {
+      text-align: center;
+      margin-top: 12px; } }
+  .tab2-gameCanvasRow-col2 div > div:last-child span:first-child {
+    font-size: 48px; }
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+      .tab2-gameCanvasRow-col2 div > div:last-child span:first-child {
+        font-size: 56px; } }
+  .tab2-gameCanvasRow-col2 div > div:last-child span:last-child {
+    font-size: 16px; }
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+      .tab2-gameCanvasRow-col2 div > div:last-child span:last-child {
+        font-size: 24px; } }
+
+.tab2-gameCanvasRow-col2-row3 {
+  margin-top: 15px; }
+  @media print, screen and (min-width: 1200px) {
+    .tab2-gameCanvasRow-col2-row3 {
+      height: 231px; } }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .tab2-gameCanvasRow-col2-row3 {
+      height: 145px; } }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-gameCanvasRow-col2-row3 {
+      height: 149px; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-gameCanvasRow-col2-row3 {
+      display: none; } }
+  .tab2-gameCanvasRow-col2-row3 > div > div:last-child {
+    font-size: 16px; }
+    @media print, screen and (min-width: 1200px) {
+      .tab2-gameCanvasRow-col2-row3 > div > div:last-child {
+        font-size: 28px; } }
+    .tab2-gameCanvasRow-col2-row3 > div > div:last-child div {
+      margin-top: 3px; }
+      @media print, screen and (min-width: 1200px) {
+        .tab2-gameCanvasRow-col2-row3 > div > div:last-child div {
+          margin-top: 5px; }
+          .tab2-gameCanvasRow-col2-row3 > div > div:last-child div:first-child {
+            margin-top: 7px; } }
+      @media print, screen and (min-width: 768px) and (max-width: 991px) {
+        .tab2-gameCanvasRow-col2-row3 > div > div:last-child div {
+          margin-top: 5px; }
+          .tab2-gameCanvasRow-col2-row3 > div > div:last-child div:first-child {
+            margin-top: 7px; } }
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+      .tab2-gameCanvasRow-col2-row3 > div > div:last-child {
+        margin-left: 15px; } }
+
+.tab2-gameCanvasRow-col2-row3-xs {
+  display: none;
+  border: 0px;
+  margin-top: 15px; }
+  @media print, screen and (max-width: 767px) {
+    .tab2-gameCanvasRow-col2-row3-xs {
+      display: block; } }
+  .tab2-gameCanvasRow-col2-row3-xs > div {
+    border: 1px solid #000; }
+  .tab2-gameCanvasRow-col2-row3-xs > div > div:last-child {
+    font-size: 16px;
+    padding: 0 15px 5px 15px; }
+    .tab2-gameCanvasRow-col2-row3-xs > div > div:last-child div {
+      margin-top: 3px; }
+  .tab2-gameCanvasRow-col2-row3-xs > div > div:first-child {
+    font-size: 24px;
+    padding: 0 15px 0px 15px; }
+
+.tab2-gameCanvasRow-col2-row2 {
+  border: 1px solid #000;
+  margin-top: 15px; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-gameCanvasRow-col2-row2 {
+      border: 0px;
+      margin-top: 12px; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-gameCanvasRow-col2-row2 {
+      border: 0px;
+      margin-bottom: 15px; } }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-gameCanvasRow-col2-row2 > div {
+      border: 1px solid #000; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-gameCanvasRow-col2-row2 > div {
+      border: 1px solid #000; } }
+  .tab2-gameCanvasRow-col2-row2 > div div {
+    margin-bottom: 5px; }
+    .tab2-gameCanvasRow-col2-row2 > div div > div {
+      display: inline-block; }
+    .tab2-gameCanvasRow-col2-row2 > div div > div:first-child {
+      width: 70px; }
+      @media print, screen and (min-width: 768px) and (max-width: 991px) {
+        .tab2-gameCanvasRow-col2-row2 > div div > div:first-child {
+          padding-left: 15px; } }
+      @media print, screen and (max-width: 767px) {
+        .tab2-gameCanvasRow-col2-row2 > div div > div:first-child {
+          margin-left: 15px; } }
+    @media print, screen and (min-width: 1200px) {
+      .tab2-gameCanvasRow-col2-row2 > div div {
+        font-size: 16px; } }
+  .tab2-gameCanvasRow-col2-row2 > div div:first-child {
+    margin-top: 5px; }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .tab2-gameCanvasRow-col2-row2 > div div:first-child > div:nth-child(3), .tab2-gameCanvasRow-col2-row2 > div div:nth-child(2) > div:nth-child(3) {
+      font-size: 0.9vw; } }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-gameCanvasRow-col2-row2 > div div:first-child > div:nth-child(3), .tab2-gameCanvasRow-col2-row2 > div div:nth-child(2) > div:nth-child(3) {
+      font-size: 14px; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-gameCanvasRow-col2-row2 > div div:first-child > div:nth-child(3), .tab2-gameCanvasRow-col2-row2 > div div:nth-child(2) > div:nth-child(3) {
+      font-size: 12px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .tab2-equPockets-wrapper, .mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols-col2 {
+    margin-top: 15px; } }
+
+.tab2-equPockets, .mainGameControlPanel-2cols, .mainGameControlPanel-2cols-col2 {
+  border: 1px solid #000; }
+  .tab2-equPockets > div, .mainGameControlPanel-2cols > div, .mainGameControlPanel-2cols-col2 > div {
+    margin-left: 15px;
+    margin-right: 15px; }
+  @media print, screen and (min-width: 1200px) {
+    .tab2-equPockets, .mainGameControlPanel-2cols, .mainGameControlPanel-2cols-col2 {
+      margin-top: 10px; }
+      .tab2-equPockets hr, .mainGameControlPanel-2cols hr, .mainGameControlPanel-2cols-col2 hr {
+        margin-left: 15px;
+        margin-right: 15px; } }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .tab2-equPockets, .mainGameControlPanel-2cols, .mainGameControlPanel-2cols-col2 {
+      margin-top: 10px; }
+      .tab2-equPockets hr, .mainGameControlPanel-2cols hr, .mainGameControlPanel-2cols-col2 hr {
+        margin-left: 15px;
+        margin-right: 15px; } }
+  .tab2-equPockets > div:first-child, .mainGameControlPanel-2cols > div:first-child, .mainGameControlPanel-2cols-col2 > div:first-child {
+    font-size: 24px; }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .tab2-equPockets > div:last-child, .mainGameControlPanel-2cols > div:last-child, .mainGameControlPanel-2cols-col2 > div:last-child {
+      margin-left: 0px; } }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-equPockets > div:last-child, .mainGameControlPanel-2cols > div:last-child, .mainGameControlPanel-2cols-col2 > div:last-child {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      margin-left: 0px; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-equPockets > div:last-child, .mainGameControlPanel-2cols > div:last-child, .mainGameControlPanel-2cols-col2 > div:last-child {
+      margin-left: 0px; } }
+
+.tab2-bottomright-box {
+  border: 1px solid #000;
+  margin-top: 10px;
+  height: 76px;
+  text-align: center; }
+  .tab2-bottomright-box > div > div {
+    padding-top: 10px;
+    height: 38px;
+    cursor: pointer; }
+    .tab2-bottomright-box > div > div:hover {
+      font-weight: bold; }
+    @media print, screen and (min-width: 1200px) {
+      .tab2-bottomright-box > div > div:first-child {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(2) {
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(3) {
+        border-right: 1px solid #000; } }
+    @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+      .tab2-bottomright-box > div > div:first-child {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(2) {
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(3) {
+        border-right: 1px solid #000; } }
+    @media print, screen and (max-width: 767px) {
+      .tab2-bottomright-box > div > div:first-child {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(2) {
+        border-bottom: 1px solid #000; }
+      .tab2-bottomright-box > div > div:nth-child(3) {
+        border-right: 1px solid #000; } }
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+      .tab2-bottomright-box > div > div {
+        padding-top: 25px;
+        height: 76px; }
+        .tab2-bottomright-box > div > div:first-child {
+          border-right: 1px solid #000; }
+        .tab2-bottomright-box > div > div:nth-child(2) {
+          border-right: 1px solid #000; }
+        .tab2-bottomright-box > div > div:nth-child(3) {
+          border-right: 1px solid #000; } }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .tab2-bottomright-box {
+      border: 0px;
+      margin-top: 15px; }
+      .tab2-bottomright-box > div {
+        border: 1px solid #000;
+        height: inherit;
+        margin-left: 0px;
+        margin-right: 0px; } }
+  @media print, screen and (max-width: 767px) {
+    .tab2-bottomright-box {
+      border: 0px;
+      margin-top: 15px; }
+      .tab2-bottomright-box > div {
+        border: 1px solid #000;
+        height: inherit;
+        margin-left: 0px;
+        margin-right: 0px; } }
+
+.shared_gameitem_attributes, .gameitem_supplycrate, .gameitem_ammocrate, .gameitem_apbullet, .gameitem_h_icon, .gameitem_i_icon, .gameitem_z_icon, .gameitem_gasoline, .gameitem_molotov, .gameitem_grenade, .gameitem_r_icon, .gameitem_c_icon, .gameitem_t_icon, .gameitem_normbullet, .gameitem_superstone, .gameitem_battery, .gameitem_s_icon, .gameitem_g_icon, .gameitem_firstaidkit, .gameitem_yellow_beacon, .gameitem_blue_beacon, .gameitem_tntcrate, .gameitem_f_icon, .gameitem_d_icon, .gameitem_ampoule, .gameitem_blue_shield, .gameitem_gray_shield, .gameitem_smallbattery, .gameitem_l_icon, .gameitem_2h_icon, .gameitem_trad_medicine, .gameitem_pork_chop, .gameitem_blue_potion, .gameitem_red_potion, .gameitem_yellow_potion, .gameitem_canned_food, .gameitem_fruits, .gameitem_bananas, .gameitem_steam_buns, .gameitem_doll, .gameitem_medal, .gameitem_little_box, .gameitem_rose, .gameitem_key {
+  background-image: url("/images/game_items.png");
+  background-repeat: no-repeat;
+  margin: 0 auto; }
+
+.shared_gameitem_attributes_2, .shared_gameitem_attributes, .gameitem_supplycrate, .gameitem_ammocrate, .gameitem_apbullet, .gameitem_h_icon, .gameitem_i_icon, .gameitem_z_icon, .gameitem_gasoline, .gameitem_molotov, .gameitem_grenade, .gameitem_r_icon, .gameitem_c_icon, .gameitem_t_icon, .gameitem_normbullet, .gameitem_superstone, .gameitem_battery, .gameitem_s_icon, .gameitem_g_icon, .gameitem_firstaidkit, .gameitem_yellow_beacon, .gameitem_blue_beacon, .gameitem_tntcrate, .gameitem_f_icon, .gameitem_d_icon, .gameitem_ampoule, .gameitem_blue_shield, .gameitem_gray_shield, .gameitem_smallbattery, .gameitem_l_icon, .gameitem_2h_icon, .gameitem_trad_medicine, .gameitem_pork_chop, .gameitem_blue_potion, .gameitem_red_potion, .gameitem_yellow_potion, .gameitem_canned_food, .gameitem_fruits, .gameitem_bananas, .gameitem_steam_buns, .gameitem_doll, .gameitem_medal, .gameitem_little_box, .gameitem_rose, .gameitem_key, .gameitem_slot_empty_backpack, .gameitem_slot_notavail, .gameitem_slot_empty_pocket {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0 auto; }
+
+.shared_gameitem_attributes_backpack > div {
+  border: 1px solid #000; }
+
+.gameitem_supplycrate {
+  background-position: 0px 0px; }
+
+.gameitem_ammocrate {
+  background-position: -40px 0px; }
+
+.gameitem_apbullet {
+  background-position: -80px 0px; }
+
+.gameitem_h_icon {
+  background-position: -120px 0px; }
+
+.gameitem_i_icon {
+  background-position: -160px 0px; }
+
+.gameitem_z_icon {
+  background-position: -200px 0px; }
+
+.gameitem_gasoline {
+  background-position: 0px -40px; }
+
+.gameitem_molotov {
+  background-position: -40px -40px; }
+
+.gameitem_grenade {
+  background-position: -80px -40px; }
+
+.gameitem_r_icon {
+  background-position: -120px -40px; }
+
+.gameitem_c_icon {
+  background-position: -160px -40px; }
+
+.gameitem_t_icon {
+  background-position: -200px -40px; }
+
+.gameitem_normbullet {
+  background-position: 0px -80px; }
+
+.gameitem_superstone {
+  background-position: -40px -80px; }
+
+.gameitem_battery {
+  background-position: -80px -80px; }
+
+.gameitem_s_icon {
+  background-position: -120px -80px; }
+
+.gameitem_g_icon {
+  background-position: -160px -80px; }
+
+.gameitem_firstaidkit {
+  background-position: -200px -80px; }
+
+.gameitem_yellow_beacon {
+  background-position: 0px -120px; }
+
+.gameitem_blue_beacon {
+  background-position: -40px -120px; }
+
+.gameitem_tntcrate {
+  background-position: -80px -120px; }
+
+.gameitem_f_icon {
+  background-position: -120px -120px; }
+
+.gameitem_d_icon {
+  background-position: -160px -120px; }
+
+.gameitem_ampoule {
+  background-position: -200px -120px; }
+
+.gameitem_blue_shield {
+  background-position: 0px -160px; }
+
+.gameitem_gray_shield {
+  background-position: -40px -160px; }
+
+.gameitem_smallbattery {
+  background-position: -80px -160px; }
+
+.gameitem_l_icon {
+  background-position: -120px -160px; }
+
+.gameitem_2h_icon {
+  background-position: -160px -160px; }
+
+.gameitem_trad_medicine {
+  background-position: -200px -160px; }
+
+.gameitem_pork_chop {
+  background-position: 0px -200px; }
+
+.gameitem_blue_potion {
+  background-position: -40px -200px; }
+
+.gameitem_red_potion {
+  background-position: -80px -200px; }
+
+.gameitem_yellow_potion {
+  background-position: -120px -200px; }
+
+.gameitem_canned_food {
+  background-position: -160px -200px; }
+
+.gameitem_fruits {
+  background-position: -200px -200px; }
+
+.gameitem_bananas {
+  background-position: 0px -240px; }
+
+.gameitem_steam_buns {
+  background-position: -40px -240px; }
+
+.gameitem_doll {
+  background-position: -80px -240px; }
+
+.gameitem_medal {
+  background-position: -120px -240px; }
+
+.gameitem_little_box {
+  background-position: -160px -240px; }
+
+.gameitem_rose {
+  background-position: -200px -240px; }
+
+.gameitem_key {
+  background-position: 0px -280px; }
+
+.gameitem_slot_notavail, .gameitem_slot_empty_pocket {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 3px; }
+
+/*** Main Game (Tab #2) - Control panel ***/
+/* 1 column design */
+.mainGameControlPanelWrapper {
+  padding-left: 15px;
+  height: 215px; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .mainGameControlPanelWrapper {
+      padding-right: 15px; } }
+  @media print, screen and (max-width: 767px) {
+    .mainGameControlPanelWrapper {
+      padding-right: 15px; } }
+
+.mainGameControlPanel {
+  height: 100%;
+  margin-top: 15px;
+  border: 1px solid #000;
+  padding-left: 0px;
+  padding-right: 0px; }
+  .mainGameControlPanel > div {
+    padding: 0px 15px 0px 15px; }
+    .mainGameControlPanel > div:first-child {
+      font-size: 24px; }
+  @media print, screen and (min-width: 1200px) {
+    .mainGameControlPanel > hr {
+      margin: 0px 15px 0px 15px; } }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .mainGameControlPanel > hr {
+      margin: 0px 15px 0px 15px; } }
+
+/* 2 columns (8:4 ratio) design */
+.shared_mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols-col2 {
+  margin-top: 5px; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .shared_mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols-col2 {
+      margin-top: 15px; } }
+  @media print, screen and (max-width: 767px) {
+    .shared_mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols, .mainGameControlPanelWrapper-2cols-col2 {
+      margin-top: 15px; } }
+
+.mainGameControlPanelWrapper-2cols-col2 {
+  padding-left: 0px;
+  padding-right: 0px; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .mainGameControlPanelWrapper-2cols-col2 {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 0px;
+      min-height: 100%; } }
+  @media print, screen and (max-width: 767px) {
+    .mainGameControlPanelWrapper-2cols-col2 {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 0px; } }
+
+.shared_mainGameControlPanel-2cols, .mainGameControlPanel-2cols, .mainGameControlPanel-2cols-col2 {
+  min-height: 200px; }
+  @media print, screen and (max-width: 767px) {
+    .shared_mainGameControlPanel-2cols, .mainGameControlPanel-2cols, .mainGameControlPanel-2cols-col2 {
+      min-height: 352px; } }
+
+.mainGameControlPanel-2cols > hr {
+  margin-bottom: 10px;
+  margin-right: 0px; }
+
+.mainGameControlPanel-2cols > div:last-child > div {
+  margin-bottom: 10px; }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .mainGameControlPanel-2cols-col2 {
+    border-top: 0px;
+    min-height: 100%; } }
+
+@media print, screen and (max-width: 767px) {
+  .mainGameControlPanel-2cols-col2 {
+    border-top: 0px;
+    min-height: 100%; } }
+
+.mainGameControlPanel-2cols-col2 > hr {
+  margin-top: 33px;
+  margin-bottom: 10px;
+  margin-left: 0px; }
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    .mainGameControlPanel-2cols-col2 > hr {
+      display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .mainGameControlPanel-2cols-col2 > hr {
+      display: none; } }
+
+.mainGameControlPanel-2cols-col2 > div.row {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center; }
+  .mainGameControlPanel-2cols-col2 > div.row > div {
+    padding-top: 5px;
+    padding-bottom: 7px; }
+  @media print, screen and (min-width: 1200px) {
+    .mainGameControlPanel-2cols-col2 > div.row {
+      font-size: 24px; }
+      .mainGameControlPanel-2cols-col2 > div.row > div {
+        padding-top: 20px; } }
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    .mainGameControlPanel-2cols-col2 > div.row {
+      font-size: 24px; }
+      .mainGameControlPanel-2cols-col2 > div.row > div:first-child {
+        padding-top: 20px; } }
+
+/* Item Contextual Menu Pane - Visual Appearance */
+.itemContextualMenuPane {
+  border: 2px solid #00B7FF;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1;
+  position: absolute;
+  min-width: 150px; }
+  .itemContextualMenuPane div {
+    border-bottom: 2px solid #00B7FF;
+    padding: 5px 10px 5px 10px; }
+    .itemContextualMenuPane div:hover {
+      background-color: #aaa;
+      color: #fff;
+      font-weight: 700; }
+  .itemContextualMenuPane div:last-child {
+    border-bottom: 0px;
+    cursor: default;
+    background-color: #777;
+    font-weight: 700;
+    color: #fff; }
+  @media print, screen and (max-width: 767px) {
+    .itemContextualMenuPane {
+      border: 2px solid #00b7ff;
+      left: 15px;
+      right: 15px; } }
+
+.itemContextualMenuPane-hide {
+  display: none; }
+
+/* Item Contextual Menu Pane position - Pockets - lg view */
+/* Item Contextual Menu Pane position - Pockets - md view */
+/* Item Contextual Menu Pane position - Pockets - sm view */
+/* Item Contextual Menu Pane position - Pockets - xs view */
+/* calculate the position of the contextual menu for each pocket item slot */
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-1-pos {
+    bottom: 5px;
+    left: 85px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-1-pos {
+    bottom: 5px;
+    left: 70px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-1-pos {
+    bottom: 60px;
+    left: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-1-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-2-pos {
+    bottom: 5px;
+    left: 145px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-2-pos {
+    bottom: 5px;
+    left: 120px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-2-pos {
+    bottom: 60px;
+    left: 125px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-2-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-3-pos {
+    bottom: 5px;
+    left: 205px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-3-pos {
+    bottom: 5px;
+    left: 170px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-3-pos {
+    bottom: 60px;
+    left: 180px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-3-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-4-pos {
+    bottom: 5px;
+    left: 265px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-4-pos {
+    bottom: 5px;
+    left: 220px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-4-pos {
+    bottom: 60px;
+    right: 180px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-4-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-5-pos {
+    bottom: 5px;
+    left: 325px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-5-pos {
+    bottom: 5px;
+    left: 270px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-5-pos {
+    bottom: 60px;
+    right: 125px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-5-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-6-pos {
+    bottom: 5px;
+    left: 385px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-6-pos {
+    bottom: 5px;
+    left: 320px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-6-pos {
+    bottom: 60px;
+    right: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-6-pos {
+    top: 75px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-7-pos {
+    bottom: 5px;
+    right: 375px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-7-pos {
+    bottom: 5px;
+    right: 315px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-7-pos {
+    bottom: 22px;
+    left: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-7-pos {
+    top: 116px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-8-pos {
+    bottom: 5px;
+    right: 315px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-8-pos {
+    bottom: 5px;
+    right: 265px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-8-pos {
+    bottom: 22px;
+    left: 125px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-8-pos {
+    top: 116px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-9-pos {
+    bottom: 5px;
+    right: 255px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-9-pos {
+    bottom: 5px;
+    right: 215px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-9-pos {
+    bottom: 22px;
+    left: 180px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-9-pos {
+    top: 116px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-10-pos {
+    bottom: 5px;
+    right: 195px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-10-pos {
+    bottom: 5px;
+    right: 165px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-10-pos {
+    bottom: 22px;
+    right: 180px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-10-pos {
+    top: 116px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-11-pos {
+    bottom: 5px;
+    right: 135px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-11-pos {
+    bottom: 5px;
+    right: 115px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-11-pos {
+    bottom: 22px;
+    right: 125px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-11-pos {
+    top: 116px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-pockets-item-12-pos {
+    bottom: 5px;
+    right: 435px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-pockets-item-12-pos {
+    bottom: 5px;
+    right: 365px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-pockets-item-12-pos {
+    bottom: 22px;
+    right: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-pockets-item-12-pos {
+    top: 116px; } }
+
+/* Item Contextual Menu Pane position - Backpack - lg view */
+/* Item Contextual Menu Pane position - Backpack - md view */
+/* Item Contextual Menu Pane position - Backpack - sm view */
+/* Item Contextual Menu Pane position - Backpack - xs view */
+/* calculate the position of the contextual menu for each pocket item slot */
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-1-pos {
+    bottom: 115px;
+    left: 85px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-1-pos {
+    bottom: 115px;
+    left: 70px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-1-pos {
+    bottom: 111px;
+    left: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-1-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-2-pos {
+    bottom: 115px;
+    left: 145px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-2-pos {
+    bottom: 115px;
+    left: 120px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-2-pos {
+    bottom: 111px;
+    left: 128px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-2-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-3-pos {
+    bottom: 115px;
+    left: 205px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-3-pos {
+    bottom: 115px;
+    left: 170px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-3-pos {
+    bottom: 111px;
+    left: 186px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-3-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-4-pos {
+    bottom: 115px;
+    left: 265px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-4-pos {
+    bottom: 115px;
+    left: 220px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-4-pos {
+    bottom: 111px;
+    left: 244px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-4-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-5-pos {
+    bottom: 115px;
+    left: 325px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-5-pos {
+    bottom: 115px;
+    left: 270px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-5-pos {
+    bottom: 111px;
+    left: 302px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-5-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-6-pos {
+    bottom: 115px;
+    left: 385px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-6-pos {
+    bottom: 115px;
+    left: 320px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-6-pos {
+    bottom: 111px;
+    left: 360px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-6-pos {
+    bottom: 140px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-7-pos {
+    bottom: 115px;
+    right: 374px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-7-pos {
+    bottom: 115px;
+    right: 315px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-7-pos {
+    bottom: 111px;
+    right: 364px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-7-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-8-pos {
+    bottom: 115px;
+    right: 314px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-8-pos {
+    bottom: 115px;
+    right: 265px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-8-pos {
+    bottom: 111px;
+    right: 306px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-8-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-9-pos {
+    bottom: 115px;
+    right: 254px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-9-pos {
+    bottom: 115px;
+    right: 215px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-9-pos {
+    bottom: 111px;
+    right: 248px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-9-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-10-pos {
+    bottom: 115px;
+    right: 194px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-10-pos {
+    bottom: 115px;
+    right: 165px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-10-pos {
+    bottom: 111px;
+    right: 190px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-10-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-11-pos {
+    bottom: 115px;
+    right: 134px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-11-pos {
+    bottom: 115px;
+    right: 115px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-11-pos {
+    bottom: 111px;
+    right: 132px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-11-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-12-pos {
+    bottom: 115px;
+    right: 74px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-12-pos {
+    bottom: 115px;
+    right: 65px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-12-pos {
+    bottom: 111px;
+    right: 74px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-12-pos {
+    bottom: 90px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-13-pos {
+    bottom: 65px;
+    left: 85px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-13-pos {
+    bottom: 65px;
+    left: 70px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-13-pos {
+    bottom: 61px;
+    left: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-13-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-14-pos {
+    bottom: 65px;
+    left: 145px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-14-pos {
+    bottom: 65px;
+    left: 120px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-14-pos {
+    bottom: 61px;
+    left: 128px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-14-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-15-pos {
+    bottom: 65px;
+    left: 205px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-15-pos {
+    bottom: 65px;
+    left: 170px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-15-pos {
+    bottom: 61px;
+    left: 186px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-15-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-16-pos {
+    bottom: 65px;
+    left: 265px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-16-pos {
+    bottom: 65px;
+    left: 220px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-16-pos {
+    bottom: 61px;
+    left: 244px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-16-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-17-pos {
+    bottom: 65px;
+    left: 325px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-17-pos {
+    bottom: 65px;
+    left: 270px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-17-pos {
+    bottom: 61px;
+    left: 302px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-17-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-18-pos {
+    bottom: 65px;
+    left: 385px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-18-pos {
+    bottom: 65px;
+    left: 320px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-18-pos {
+    bottom: 61px;
+    left: 360px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-18-pos {
+    bottom: 40px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-19-pos {
+    bottom: 65px;
+    right: 374px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-19-pos {
+    bottom: 65px;
+    right: 315px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-19-pos {
+    bottom: 61px;
+    right: 364px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-19-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-20-pos {
+    bottom: 65px;
+    right: 314px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-20-pos {
+    bottom: 65px;
+    right: 265px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-20-pos {
+    bottom: 61px;
+    right: 306px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-20-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-21-pos {
+    bottom: 65px;
+    right: 254px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-21-pos {
+    bottom: 65px;
+    right: 215px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-21-pos {
+    bottom: 61px;
+    right: 248px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-21-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-22-pos {
+    bottom: 65px;
+    right: 194px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-22-pos {
+    bottom: 65px;
+    right: 165px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-22-pos {
+    bottom: 61px;
+    right: 190px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-22-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-23-pos {
+    bottom: 65px;
+    right: 134px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-23-pos {
+    bottom: 65px;
+    right: 115px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-23-pos {
+    bottom: 61px;
+    right: 132px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-23-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-24-pos {
+    bottom: 65px;
+    right: 74px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-24-pos {
+    bottom: 65px;
+    right: 65px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-24-pos {
+    bottom: 61px;
+    right: 74px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-24-pos {
+    bottom: -10px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-25-pos {
+    bottom: 15px;
+    left: 85px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-25-pos {
+    bottom: 15px;
+    left: 70px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-25-pos {
+    bottom: 11px;
+    left: 70px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-25-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-26-pos {
+    bottom: 15px;
+    left: 145px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-26-pos {
+    bottom: 15px;
+    left: 120px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-26-pos {
+    bottom: 11px;
+    left: 128px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-26-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-27-pos {
+    bottom: 15px;
+    left: 205px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-27-pos {
+    bottom: 15px;
+    left: 170px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-27-pos {
+    bottom: 11px;
+    left: 186px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-27-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-28-pos {
+    bottom: 15px;
+    left: 265px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-28-pos {
+    bottom: 15px;
+    left: 220px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-28-pos {
+    bottom: 11px;
+    left: 244px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-28-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-29-pos {
+    bottom: 15px;
+    left: 325px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-29-pos {
+    bottom: 15px;
+    left: 270px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-29-pos {
+    bottom: 11px;
+    left: 302px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-29-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-30-pos {
+    bottom: 15px;
+    left: 385px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-30-pos {
+    bottom: 15px;
+    left: 320px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-30-pos {
+    bottom: 11px;
+    left: 360px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-30-pos {
+    bottom: 106px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-31-pos {
+    bottom: 15px;
+    right: 374px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-31-pos {
+    bottom: 15px;
+    right: 315px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-31-pos {
+    bottom: 11px;
+    right: 364px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-31-pos {
+    bottom: 56px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-32-pos {
+    bottom: 15px;
+    right: 314px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-32-pos {
+    bottom: 15px;
+    right: 265px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-32-pos {
+    bottom: 11px;
+    right: 306px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-32-pos {
+    bottom: 56px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-33-pos {
+    bottom: 15px;
+    right: 254px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-33-pos {
+    bottom: 15px;
+    right: 215px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-33-pos {
+    bottom: 11px;
+    right: 248px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-33-pos {
+    bottom: 56px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-34-pos {
+    bottom: 15px;
+    right: 194px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-34-pos {
+    bottom: 15px;
+    right: 165px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-34-pos {
+    bottom: 11px;
+    right: 190px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-34-pos {
+    bottom: 56px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-35-pos {
+    bottom: 15px;
+    right: 134px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-35-pos {
+    bottom: 15px;
+    right: 115px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-35-pos {
+    bottom: 11px;
+    right: 132px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-35-pos {
+    bottom: 56px; } }
+
+@media print, screen and (min-width: 1200px) {
+  .itemContextualMenuPane-backpack-item-36-pos {
+    bottom: 15px;
+    right: 74px; } }
+
+@media print, screen and (min-width: 992px) and (max-width: 1199px) {
+  .itemContextualMenuPane-backpack-item-36-pos {
+    bottom: 15px;
+    right: 65px; } }
+
+@media print, screen and (min-width: 768px) and (max-width: 991px) {
+  .itemContextualMenuPane-backpack-item-36-pos {
+    bottom: 11px;
+    right: 74px; } }
+
+@media print, screen and (max-width: 767px) {
+  .itemContextualMenuPane-backpack-item-36-pos {
+    bottom: 56px; } }

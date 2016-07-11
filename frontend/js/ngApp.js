@@ -35,7 +35,8 @@ meanTodoModule.config(['$routeProvider', '$locationProvider',
 //---------------
 // Constants and Values
 //---------------
-meanTodoModule.constant('siteTitleModuleConst', "My Mean Todo App - [v.0.0.1]");
+meanTodoModule.constant('siteTitleModuleConst', "My Mean Todo App");
+meanTodoModule.constant('webAppVersionNumberConst',  "-[ver.0.0.2]-");
 
 //---------------
 // Services
@@ -88,10 +89,12 @@ meanTodoModule.factory('TodoListApiFactory', ['$resource', function($resource) {
 // Controllers
 //---------------
 meanTodoModule.controller('LayoutController',
-                          ['$scope', '$rootScope', 'siteTitleModuleConst',
-                          function($scope, $rootScope, $siteTitleModuleConst) {
+                          ['$scope', '$rootScope', 'siteTitleModuleConst', 'webAppVersionNumberConst',
+                          function($scope, $rootScope, $siteTitleModuleConst, $webAppVersionNumberConst) {
     /** RootScope is defined in the top-most parent controller **/
     $rootScope.isUserLoggedIn = false;
+
+    $scope.webAppVersionNumber = $webAppVersionNumberConst;
 
     $scope.exportedData = function(signature, value) {
         $scope.siteTitle = $siteTitleModuleConst;
@@ -113,28 +116,52 @@ meanTodoModule.controller('MainPageController',
                           ['$scope', '$rootScope', '$http', 'siteTitleModuleConst',
                           function($scope, $rootScope, $http, siteTitleModuleConst) {
   $scope.siteTitle = siteTitleModuleConst;
-  $scope.labelTab1 = "[ #1 ] Todo List";
-  $scope.labelTab2 = "[ #2 ] Secret Sauce";
+  $scope.labelTab1 = "[ #1 ] Todo List w/ Angular.JS";
+  $scope.labelTab2 = "[ #2 ] Adventure w/ React.JS";
+  $scope.labelTab3 = "[ #3 ] Secret Sauce";
   $scope.urlRegister = "/#/register";
   $scope.urlLogin = "/#/login";
 
   $scope.showContainer = '1';
 
   $scope.clickNavBtn1 = function(viewport) {
-      $(".tab1-nav-btn").addClass("active");
-      $(".tab2-nav-btn").removeClass("active");
+    if($(".tab1-nav-btn").hasClass("active") == false) {
+          $(".tab1-nav-btn").addClass("active");
+          $(".tab2-nav-btn").removeClass("active");
+          $(".tab3-nav-btn").removeClass("active");
 
-      clickNavbarToggleNarrowView(viewport);
+          clickNavbarToggleNarrowView(viewport);
 
-      $scope.showContainer = '1';
+          //mainGame.pauseGame();
+
+          $scope.showContainer = '1';
+    }
   }
   $scope.clickNavBtn2 = function(viewport) {
-      $(".tab1-nav-btn").removeClass("active");
-      $(".tab2-nav-btn").addClass("active");
+      if($(".tab2-nav-btn").hasClass("active") == false) {
+          $(".tab1-nav-btn").removeClass("active");
+          $(".tab2-nav-btn").addClass("active");
+          $(".tab3-nav-btn").removeClass("active");
 
-      clickNavbarToggleNarrowView(viewport);
+          clickNavbarToggleNarrowView(viewport);
 
-      $scope.showContainer = '2';
+          //mainGame.runGame();
+
+          $scope.showContainer = '2';
+      }
+  }
+  $scope.clickNavBtn3 = function(viewport) {
+      if($(".tab3-nav-btn").hasClass("active") == false) {
+          $(".tab1-nav-btn").removeClass("active");
+          $(".tab2-nav-btn").removeClass("active");
+          $(".tab3-nav-btn").addClass("active");
+
+          clickNavbarToggleNarrowView(viewport);
+
+          //mainGame.pauseGame();
+
+          $scope.showContainer = '3';
+      }
   }
 
   $scope.$on('emitToMainPageControllerEvent', function(event, data) {
@@ -248,15 +275,12 @@ meanTodoModule.controller('TodoListController',
   $scope.alterCreateBtnText = function(mouseState) {
       switch(mouseState) {
           case "mouseenter" :
-            console.log("enter");
             $scope.createBtnText = "Login";
             break;
           case "mouseleave" :
-            console.log("leave");
             $scope.createBtnText = "Create";
             break;
           default :
-            console.log("default");
             $scope.createBtnText = "Create";
       }
   }

@@ -1,0 +1,40 @@
+.main-tab-1-create-task-menu {
+  @include media-query-wide() {
+      input { width: 60% !important; }
+  }
+  @include media-query-medium() {
+      input { width: 45% !important; }
+  }
+  @include media-query-narrow() {
+      display: none !important;
+  }
+}
+.main-tab-1-create-task-menu-narrow {
+  @include media-query-wide() {
+      /* width: 85% !important; */
+      display: none !important;
+  }
+}
+.main-tab1-custom-input-1-left {
+    width: 97% !important;
+}
+.main-tab1-custom-input-1-right {
+    @include media-query-wide() {
+        width: 75% !important;
+    }
+}
+.main-tab-1-detail-page-last-row {
+    margin-top: 10px; margin-left: 30px;
+    a:hover {
+        @extend .inheritance_2;
+    }
+}
+.todo-list-entry-title {
+    padding-top: 7px;
+}
+.btn-narrow-view-make-it-small {
+    @include media-query-narrow() {
+        // emulate btn-sm bootstrap class
+        padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius:3px;
+    }
+}

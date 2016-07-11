@@ -2,6 +2,7 @@ var path = require('path');
 var gulp = require('gulp');
 var gulpSass = require('gulp-sass');
 var gulpRename = require('gulp-rename');
+var gulpUglify = require('gulp-uglify');
 var gulpWebpack = require('webpack-stream');
 var gulpDelete = require('del');
 var karma = require('karma').Server;
@@ -20,11 +21,20 @@ gulp.task('task-css', function() {
 gulp.task('task-js', ['task-css'] , function() {
     // the gulp entry point is a dummy entry point because we're using entry points defined
     // in webpack.config.js.
-    return gulp.src(path.join(__dirname, '/public/frontend/js/*.js'))
-                        .pipe( gulpWebpack(require(path.join(__dirname, '/webpack.config.js'))) )
-                        .pipe( gulpRename({suffix: '.bundle'}) )
-                        .pipe( gulp.dest(path.join(__dirname, '/public/dist/')) );
+    return gulp.src(path.join(__dirname, '/frontend/js/*.js'))
+               .pipe( gulpWebpack(require(path.join(__dirname, '/webpack.config.js'))) )
+               .pipe( gulpRename({suffix: '.bundle'}) )
+               .pipe( gulp.dest(path.join(__dirname, '/public/dist/')) );
 
+});
+
+/* For some unknown reasons, mainGame.js can't be minified with webpack.
+   Probably webpack bundling will break the code */
+gulp.task('task-js-mainGame', ['task-js'] , function() {
+    return gulp.src(path.join(__dirname, '/frontend/js/mainGame.js'))
+               .pipe( gulpUglify() )
+               .pipe( gulpRename({suffix: '.min'}) )
+               .pipe( gulp.dest(path.join(__dirname, '/public/dist/')) );
 });
 
 /* Run the cleaning task only after task.js has been performed.
@@ -60,4 +70,4 @@ gulp.task('task-karma-tdd', function(done) {
 });
 
 /* All Set! */
-gulp.task('default', ['task-css', 'task-js', 'task-cleaning']);
+gulp.task('default', ['task-css', 'task-js', 'task-js-mainGame', 'task-cleaning']);

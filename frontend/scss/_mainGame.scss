@@ -1,0 +1,282 @@
+/* 450 x 353 */
+/* 675 x 529 */
+#mainGameCanvas {
+    border: 1px solid black; width: 100%; height: auto;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.tab2 {
+    hr { margin: 0 }
+}
+.tab2-statusRow {
+    font-size: 16px;
+    hr { margin-top: 5px; margin-bottom: 15px; }
+}
+.tab2-statusRow-bar {
+    display: block;
+    @include media-query-wide() { font-size: 1.8vw; }
+    @include media-query-medium() { font-size: 1.5vw; }
+    @include media-query-narrow() {
+        display: none;
+    }
+}
+.tab2-statusRow-left {
+    div { display: inline-block; }
+    div:nth-child(2) {
+        font-size: 24px;
+        @include media-query-narrow() {
+            font-size: 40px; padding-left: 3px;
+        }
+    }
+    div:nth-child(3) {
+        @extend .tab2-statusRow-bar;
+    }
+}
+.tab2-statusRow-general {
+    div { display: inline-block; }
+    div:nth-child(1) {
+        @include media-query-narrow() {
+            display: block; padding-bottom: 1px;
+        }
+    }
+    div:nth-child(2) {
+        font-size: 24px;
+    }
+    div:nth-child(3) {
+        font-size: 14px;
+    }
+    div:nth-child(4) {
+        @extend .tab2-statusRow-bar;
+    }
+}
+.shared-tab2-gameCanvasRow-col2 {
+    border:1px solid #000;
+    @include media-query-sm-bstrap-pattern() {
+        border: 0px;
+        &> div { border: 1px solid #000; height: 150px; }
+    }
+    @include media-query-xs-bstrap-pattern() {
+        border: 0px;
+    }
+    &> div > div:first-child {
+      font-size: 24px;
+      @include media-query-sm-bstrap-pattern() { margin-left: 15px; }
+    }
+}
+.tab2-gameCanvasRow-col2 {
+    @extend .shared-tab2-gameCanvasRow-col2;
+    @include media-query-sm-bstrap-pattern() { margin-top:12px; }
+    div > div:last-child {
+        text-align: right;
+        @include media-query-sm-bstrap-pattern() {
+          text-align: center; margin-top: 12px;
+        }
+        span:first-child {
+          font-size: 48px;
+          @include media-query-sm-bstrap-pattern() { font-size: 56px; }
+        }
+        span:last-child {
+          font-size: 16px;
+          @include media-query-sm-bstrap-pattern() { font-size: 24px; }
+        }
+    }
+}
+.tab2-gameCanvasRow-col2-row3 {
+    @extend .shared-tab2-gameCanvasRow-col2;
+    margin-top: 15px;
+    @include media-query-lg-bstrap-pattern() { height: 231px; }
+    @include media-query-md-bstrap-pattern() { height: 145px; }
+    @include media-query-sm-bstrap-pattern() { height: 149px; }
+    @include media-query-xs-bstrap-pattern() { display: none; }
+    &> div > div:last-child {
+        font-size: 16px;
+        @include media-query-lg-bstrap-pattern() { font-size: 28px; }
+        div {
+            @include media-query-lg-bstrap-pattern() {
+              &:first-child { margin-top: 7px; }
+              margin-top: 5px;
+            }
+            @include media-query-sm-bstrap-pattern() {
+              &:first-child { margin-top: 7px; }
+              margin-top: 5px;
+            }
+            margin-top: 3px;
+        }
+        @include media-query-sm-bstrap-pattern() { margin-left: 15px; }
+    }
+}
+.tab2-gameCanvasRow-col2-row3-xs {
+    display: none; border: 0px; margin-top: 15px;
+    @include media-query-xs-bstrap-pattern() { display: block; }
+    &> div { border: 1px solid #000; }
+    &> div > div:last-child {
+        font-size: 16px; padding:0 15px 5px 15px;
+        div { margin-top: 3px; }
+    }
+    &> div > div:first-child { font-size: 24px; padding:0 15px 0px 15px; }
+}
+.tab2-gameCanvasRow-col2-row2 {
+    border:1px solid #000; margin-top: 15px;
+    @include media-query-sm-bstrap-pattern() { border: 0px; margin-top: 12px; }
+    @include media-query-xs-bstrap-pattern() { border: 0px; margin-bottom: 15px; }
+    &> div {
+        @include media-query-sm-bstrap-pattern() { border:1px solid #000 }
+        @include media-query-xs-bstrap-pattern() { border:1px solid #000 }
+        div {
+            &> div { display: inline-block; }
+            &> div:first-child {
+                width: 70px;
+                @include media-query-sm-bstrap-pattern() { padding-left:15px; }
+                @include media-query-xs-bstrap-pattern() { margin-left: 15px; }
+            }
+            margin-bottom: 5px;
+            @include media-query-lg-bstrap-pattern() { font-size: 16px; }
+        }
+        div:first-child { margin-top: 5px; }
+        div:first-child, div:nth-child(2) {
+            &> div:nth-child(3) {
+              @include media-query-md-bstrap-pattern() { font-size: 0.9vw; }
+              @include media-query-sm-bstrap-pattern() { font-size: 14px; }
+              @include media-query-xs-bstrap-pattern() { font-size: 12px; }
+            }
+        }
+    }
+}
+.tab2-equPockets-wrapper {
+    @include media-query-sm-bstrap-pattern() { margin-top: 15px; }
+}
+.tab2-equPockets {
+    border: 1px solid #000;
+    &> div { margin-left:15px; margin-right:15px; }
+    @include media-query-lg-bstrap-pattern() {
+        hr { margin-left:15px; margin-right:15px; }
+        margin-top: 10px;
+    }
+    @include media-query-md-bstrap-pattern() {
+        hr { margin-left:15px; margin-right:15px; }
+        margin-top: 10px;
+    }
+    &> div:first-child { font-size: 24px; }
+    &> div:last-child {
+        @include media-query-md-bstrap-pattern() {
+            margin-left:0px;
+        }
+        @include media-query-sm-bstrap-pattern() {
+            margin-top: 16px; margin-bottom: 16px; margin-left:0px;
+        }
+        @include media-query-xs-bstrap-pattern() {
+            margin-left:0px;
+        }
+    }
+}
+.tab2-bottomright-box {
+    $box-height: 76px;
+    border: 1px solid #000; margin-top: 10px; height: $box-height; text-align: center;
+    &> div {
+        &> div {
+          &:hover { font-weight: bold; }
+          padding-top: 10px; height: $box-height / 2; cursor: pointer;
+          @include media-query-lg-bstrap-pattern() {
+            &:first-child { border-right: 1px solid #000; border-bottom: 1px solid #000; }
+            &:nth-child(2) { border-bottom: 1px solid #000; }
+            &:nth-child(3) { border-right: 1px solid #000; }
+          }
+          @include media-query-md-bstrap-pattern() {
+            &:first-child { border-right: 1px solid #000; border-bottom: 1px solid #000; }
+            &:nth-child(2) { border-bottom: 1px solid #000; }
+            &:nth-child(3) { border-right: 1px solid #000; }
+          }
+          @include media-query-xs-bstrap-pattern() {
+            &:first-child { border-right: 1px solid #000; border-bottom: 1px solid #000; }
+            &:nth-child(2) { border-bottom: 1px solid #000; }
+            &:nth-child(3) { border-right: 1px solid #000; }
+          }
+          @include media-query-sm-bstrap-pattern() {
+            padding-top: 25px; height: $box-height;
+            &:first-child { border-right: 1px solid #000; }
+            &:nth-child(2) { border-right: 1px solid #000; }
+            &:nth-child(3) { border-right: 1px solid #000; }
+          }
+        }
+    }
+    @include media-query-sm-bstrap-pattern() {
+        border: 0px; margin-top: 15px;
+        &> div {
+          border: 1px solid #000; height: inherit;
+          margin-left: 0px; margin-right: 0px;
+        }
+    }
+    @include media-query-xs-bstrap-pattern() {
+        border: 0px; margin-top: 15px;
+        &> div {
+          border: 1px solid #000; height: inherit;
+          margin-left: 0px; margin-right: 0px;
+        }
+    }
+}
+.shared_gameitem_attributes {
+    @extend .shared_gameitem_attributes_2;
+    background-image: url("/images/game_items.png");
+    background-repeat: no-repeat; margin: 0 auto;
+}
+.shared_gameitem_attributes_2 {
+    width: 40px; height: 40px; cursor: pointer; margin: 0 auto;
+}
+.shared_gameitem_attributes_backpack {
+    &> div { border: 1px solid #000; }
+}
+.gameitem_supplycrate { @extend .shared_gameitem_attributes; background-position: 0px 0px; }
+.gameitem_ammocrate { @extend .shared_gameitem_attributes; background-position: -40px 0px; }
+.gameitem_apbullet { @extend .shared_gameitem_attributes; background-position: -80px 0px; }
+.gameitem_h_icon { @extend .shared_gameitem_attributes; background-position: -120px 0px; }
+.gameitem_i_icon { @extend .shared_gameitem_attributes; background-position: -160px 0px; }
+.gameitem_z_icon { @extend .shared_gameitem_attributes; background-position: -200px 0px; }
+
+.gameitem_gasoline { @extend .shared_gameitem_attributes; background-position: 0px -40px; }
+.gameitem_molotov { @extend .shared_gameitem_attributes; background-position: -40px -40px; }
+.gameitem_grenade { @extend .shared_gameitem_attributes; background-position: -80px -40px; }
+.gameitem_r_icon { @extend .shared_gameitem_attributes; background-position: -120px -40px; }
+.gameitem_c_icon { @extend .shared_gameitem_attributes; background-position: -160px -40px; }
+.gameitem_t_icon { @extend .shared_gameitem_attributes; background-position: -200px -40px; }
+
+.gameitem_normbullet { @extend .shared_gameitem_attributes; background-position: 0px -80px; }
+.gameitem_superstone { @extend .shared_gameitem_attributes; background-position: -40px -80px; }
+.gameitem_battery { @extend .shared_gameitem_attributes; background-position: -80px -80px; }
+.gameitem_s_icon { @extend .shared_gameitem_attributes; background-position: -120px -80px; }
+.gameitem_g_icon { @extend .shared_gameitem_attributes; background-position: -160px -80px; }
+.gameitem_firstaidkit { @extend .shared_gameitem_attributes; background-position: -200px -80px; }
+
+.gameitem_yellow_beacon { @extend .shared_gameitem_attributes; background-position: 0px -120px; }
+.gameitem_blue_beacon { @extend .shared_gameitem_attributes; background-position: -40px -120px; }
+.gameitem_tntcrate { @extend .shared_gameitem_attributes; background-position: -80px -120px; }
+.gameitem_f_icon { @extend .shared_gameitem_attributes; background-position: -120px -120px; }
+.gameitem_d_icon { @extend .shared_gameitem_attributes; background-position: -160px -120px; }
+.gameitem_ampoule { @extend .shared_gameitem_attributes; background-position: -200px -120px; }
+
+.gameitem_blue_shield { @extend .shared_gameitem_attributes; background-position: 0px -160px; }
+.gameitem_gray_shield { @extend .shared_gameitem_attributes; background-position: -40px -160px; }
+.gameitem_smallbattery { @extend .shared_gameitem_attributes; background-position: -80px -160px; }
+.gameitem_l_icon { @extend .shared_gameitem_attributes; background-position: -120px -160px; }
+.gameitem_2h_icon { @extend .shared_gameitem_attributes; background-position: -160px -160px; }
+.gameitem_trad_medicine { @extend .shared_gameitem_attributes; background-position: -200px -160px; }
+
+.gameitem_pork_chop { @extend .shared_gameitem_attributes; background-position: 0px -200px; }
+.gameitem_blue_potion { @extend .shared_gameitem_attributes; background-position: -40px -200px; }
+.gameitem_red_potion { @extend .shared_gameitem_attributes; background-position: -80px -200px; }
+.gameitem_yellow_potion { @extend .shared_gameitem_attributes; background-position: -120px -200px; }
+.gameitem_canned_food { @extend .shared_gameitem_attributes; background-position: -160px -200px; }
+.gameitem_fruits { @extend .shared_gameitem_attributes; background-position: -200px -200px; }
+
+.gameitem_bananas { @extend .shared_gameitem_attributes; background-position: 0px -240px; }
+.gameitem_steam_buns { @extend .shared_gameitem_attributes; background-position: -40px -240px; }
+.gameitem_doll { @extend .shared_gameitem_attributes; background-position: -80px -240px; }
+.gameitem_medal { @extend .shared_gameitem_attributes; background-position: -120px -240px; }
+.gameitem_little_box { @extend .shared_gameitem_attributes; background-position: -160px -240px; }
+.gameitem_rose { @extend .shared_gameitem_attributes; background-position: -200px -240px; }
+
+.gameitem_key { @extend .shared_gameitem_attributes; background-position: 0px -280px; }
+
+.gameitem_slot_empty_backpack { @extend .shared_gameitem_attributes_2; }
+.gameitem_slot_notavail, .gameitem_slot_empty_pocket {
+    @extend .shared_gameitem_attributes_2; font-size: 24px; text-align: center; padding-top: 3px;
+}

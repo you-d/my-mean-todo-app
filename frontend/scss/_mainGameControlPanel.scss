@@ -1,0 +1,381 @@
+/* 1 column design */
+.mainGameControlPanelWrapper {
+    padding-left: 15px; height: 215px;
+    @include media-query-sm-bstrap-pattern() { padding-right: 15px; }
+    @include media-query-xs-bstrap-pattern() { padding-right: 15px; }
+}
+.mainGameControlPanel {
+    height:100%; margin-top: 15px; border: 1px solid #000;
+    padding-left: 0px; padding-right: 0px;
+    &> div {
+        padding: 0px 15px 0px 15px;
+        &:first-child { font-size: 24px; }
+    }
+    &> hr {
+        @include media-query-lg-bstrap-pattern() { margin: 0px 15px 0px 15px; }
+        @include media-query-md-bstrap-pattern() { margin: 0px 15px 0px 15px; }
+    }
+}
+/* 2 columns (8:4 ratio) design */
+.shared_mainGameControlPanelWrapper-2cols {
+    margin-top: 5px;
+    @include media-query-sm-bstrap-pattern() { margin-top: 15px; }
+    @include media-query-xs-bstrap-pattern() { margin-top: 15px; }
+}
+.mainGameControlPanelWrapper-2cols {
+    @extend .tab2-equPockets-wrapper;
+    @extend .shared_mainGameControlPanelWrapper-2cols;
+}
+.mainGameControlPanelWrapper-2cols-col2 {
+    @extend .tab2-equPockets-wrapper;
+    @extend .shared_mainGameControlPanelWrapper-2cols;
+    padding-left: 0px; padding-right: 0px;
+    @include media-query-sm-bstrap-pattern() {
+        padding-left: 15px; padding-right: 15px; margin-top: 0px; min-height: 100%;
+    }
+    @include media-query-xs-bstrap-pattern() {
+        padding-left: 15px; padding-right: 15px; margin-top: 0px;
+    }
+}
+.shared_mainGameControlPanel-2cols {
+    min-height: 200px;
+    @include media-query-xs-bstrap-pattern() { min-height: 352px; }
+}
+.mainGameControlPanel-2cols {
+    @extend .tab2-equPockets;
+    @extend .shared_mainGameControlPanel-2cols;
+    &> hr { margin-bottom: 10px; margin-right: 0px; }
+    &> div:last-child {
+      &> div { margin-bottom:10px; }
+    }
+}
+.mainGameControlPanel-2cols-col2 {
+    @extend .tab2-equPockets;
+    @extend .shared_mainGameControlPanel-2cols;
+    @include media-query-sm-bstrap-pattern() { border-top: 0px; min-height: 100%; }
+    @include media-query-xs-bstrap-pattern() { border-top: 0px; min-height: 100%; }
+    &> hr {
+      margin-top: 33px; margin-bottom: 10px; margin-left: 0px;
+      @include media-query-sm-bstrap-pattern() { display: none; }
+      @include media-query-xs-bstrap-pattern() { display: none; }
+    }
+    &> div.row {
+      margin-top: 0px; margin-bottom: 0px; text-align: center;
+      &> div { padding-top: 5px; padding-bottom: 7px; }
+      @include media-query-lg-bstrap-pattern() {
+        font-size: 24px;
+        &> div { padding-top: 20px; }
+      }
+      @include media-query-md-bstrap-pattern() {
+        font-size: 24px;
+        &> div:first-child { padding-top: 20px; }
+      }
+    }
+}
+/* Item Contextual Menu Pane - Visual Appearance */
+.itemContextualMenuPane {
+    border: 2px solid #00B7FF; cursor: pointer;
+    background-color: rgba(255,255,255,0.95); z-index: 1;
+    position: absolute; min-width: 150px;
+    div {
+      border-bottom: 2px solid #00B7FF; padding: 5px 10px 5px 10px;
+      &:hover { background-color: #aaa; color: #fff; font-weight: 700; }
+    }
+    div:last-child { border-bottom: 0px; cursor: default; background-color: #777;
+                     font-weight: 700; color: #fff; }
+    @include media-query-xs-bstrap-pattern() {
+        border: 2px solid #00b7ff; left: 15px; right: 15px;
+    }
+}
+.itemContextualMenuPane-hide { display: none; }
+
+/* Item Contextual Menu Pane position - Pockets - lg view */
+$item-contextual-menu-pane-pockets-lg-bottom: 5px;
+$item-contextual-menu-pane-pockets-lg-left-start: 85px;
+$item-contextual-menu-pane-pockets-lg-right-start: 75px;
+$item-contextual-menu-pane-pockets-lg-distance: 60px;
+/* Item Contextual Menu Pane position - Pockets - md view */
+$item-contextual-menu-pane-pockets-md-bottom: 5px;
+$item-contextual-menu-pane-pockets-md-left-start: 70px;
+$item-contextual-menu-pane-pockets-md-right-start: 65px;
+$item-contextual-menu-pane-pockets-md-distance: 50px;
+/* Item Contextual Menu Pane position - Pockets - sm view */
+$item-contextual-menu-pane-pockets-sm-row1-bottom: 60px;
+$item-contextual-menu-pane-pockets-sm-row2-bottom: 22px;
+$item-contextual-menu-pane-pockets-sm-left-start: 70px;
+$item-contextual-menu-pane-pockets-sm-right-start: 70px;
+$item-contextual-menu-pane-pockets-sm-distance: 55px;
+/* Item Contextual Menu Pane position - Pockets - xs view */
+$item-contextual-menu-pane-pockets-xs-row1-top: 75px;
+$item-contextual-menu-pane-pockets-xs-row2-top: 116px;
+
+/* calculate the position of the contextual menu for each pocket item slot */
+@mixin item-contextual-menu-pane-position-pockets-lg($item-num) {
+    @if ($item-num <= 12 and $item-num >= 1) {
+        bottom: $item-contextual-menu-pane-pockets-lg-bottom;
+        @if ($item-num <= 6) {
+          left: $item-contextual-menu-pane-pockets-lg-left-start +
+                $item-contextual-menu-pane-pockets-lg-distance * ($item-num - 1);
+        } @else {
+          right: $item-contextual-menu-pane-pockets-lg-right-start +
+                 $item-contextual-menu-pane-pockets-lg-distance *
+                 ( ($item-num % 6 - 6 ) * -1 );
+        }
+    }
+}
+@mixin item-contextual-menu-pane-position-pockets-md($item-num) {
+    @if ($item-num <= 12 and $item-num >= 1) {
+        bottom: $item-contextual-menu-pane-pockets-md-bottom;
+        @if ($item-num <= 6) {
+          left: $item-contextual-menu-pane-pockets-md-left-start +
+                $item-contextual-menu-pane-pockets-md-distance * ($item-num - 1);
+        } @else {
+          right: $item-contextual-menu-pane-pockets-md-right-start +
+                 $item-contextual-menu-pane-pockets-md-distance *
+                 ( ($item-num % 6 - 6 ) * -1 );
+        }
+    }
+}
+@mixin item-contextual-menu-pane-position-pockets-sm($item-num) {
+    @if ($item-num <= 6 and $item-num >= 1) {
+        // 1st row
+        bottom: $item-contextual-menu-pane-pockets-sm-row1-bottom;
+    }
+    @if ($item-num <= 12 and $item-num >= 7) {
+        // 2nd row
+        bottom: $item-contextual-menu-pane-pockets-sm-row2-bottom;
+    }
+
+    @if ($item-num >= 1 and $item-num <= 3) {
+        // item #1-#3
+        left: $item-contextual-menu-pane-pockets-sm-left-start +
+              $item-contextual-menu-pane-pockets-sm-distance * ($item-num - 1);
+    }
+    @if ($item-num >= 7 and $item-num <= 9) {
+        // item #7-#9
+        left: $item-contextual-menu-pane-pockets-sm-left-start +
+              $item-contextual-menu-pane-pockets-sm-distance * ($item-num - 7);
+    }
+
+    @if ($item-num >= 4 and $item-num <= 6) {
+      // item #4-#6
+      right: $item-contextual-menu-pane-pockets-sm-right-start +
+             $item-contextual-menu-pane-pockets-sm-distance *
+             ( ($item-num - 6 ) * -1 );
+    }
+    @if ($item-num >= 10 and $item-num <= 12) {
+      // item #10-#12
+      right: $item-contextual-menu-pane-pockets-sm-right-start +
+             $item-contextual-menu-pane-pockets-sm-distance *
+             ( ($item-num - 12 ) * -1 );
+    }
+}
+@mixin item-contextual-menu-pane-position-pockets-xs($item-num) {
+    @if ($item-num <= 6 and $item-num >= 0) {
+        // 1st row
+        top: $item-contextual-menu-pane-pockets-xs-row1-top;
+    }
+    @if ($item-num <= 12 and $item-num >= 7) {
+        // 2nd row
+        top: $item-contextual-menu-pane-pockets-xs-row2-top;
+    }
+}
+
+@for $pocketsItemNum from 1 through 12 {
+    .itemContextualMenuPane-pockets-item-#{$pocketsItemNum}-pos {
+        @include media-query-lg-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-pockets-lg($pocketsItemNum);
+        }
+        @include media-query-md-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-pockets-md($pocketsItemNum);
+        }
+        @include media-query-sm-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-pockets-sm($pocketsItemNum);
+        }
+        @include media-query-xs-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-pockets-xs($pocketsItemNum);
+        }
+    }
+}
+
+/* Item Contextual Menu Pane position - Backpack - lg view */
+$item-contextual-menu-pane-backpack-lg-row1-bottom: 115px;
+$item-contextual-menu-pane-backpack-lg-row2-bottom: 65px;
+$item-contextual-menu-pane-backpack-lg-row3-bottom: 15px;
+$item-contextual-menu-pane-backpack-lg-left-start: 85px;
+$item-contextual-menu-pane-backpack-lg-right-start: 74px;
+$item-contextual-menu-pane-backpack-lg-distance: 60px;
+
+/* Item Contextual Menu Pane position - Backpack - md view */
+$item-contextual-menu-pane-backpack-md-row1-bottom: 115px;
+$item-contextual-menu-pane-backpack-md-row2-bottom: 65px;
+$item-contextual-menu-pane-backpack-md-row3-bottom: 15px;
+$item-contextual-menu-pane-backpack-md-left-start: 70px;
+$item-contextual-menu-pane-backpack-md-right-start: 65px;
+$item-contextual-menu-pane-backpack-md-distance: 50px;
+
+/* Item Contextual Menu Pane position - Backpack - sm view */
+$item-contextual-menu-pane-backpack-sm-row1-bottom: 111px;
+$item-contextual-menu-pane-backpack-sm-row2-bottom: 61px;
+$item-contextual-menu-pane-backpack-sm-row3-bottom: 11px;
+$item-contextual-menu-pane-backpack-sm-left-start: 70px;
+$item-contextual-menu-pane-backpack-sm-right-start: 74px;
+$item-contextual-menu-pane-backpack-sm-distance: 58px;
+
+/* Item Contextual Menu Pane position - Backpack - xs view */
+$item-contextual-menu-pane-backpack-xs-row1-bottom: 140px;
+$item-contextual-menu-pane-backpack-xs-row2-bottom: 90px;
+$item-contextual-menu-pane-backpack-xs-row3-bottom: 40px;
+$item-contextual-menu-pane-backpack-xs-row4-bottom: -10px;
+$item-contextual-menu-pane-backpack-xs-row5-bottom: 106px;
+$item-contextual-menu-pane-backpack-xs-row6-bottom: 56px;
+
+/* calculate the position of the contextual menu for each pocket item slot */
+@mixin item-contextual-menu-pane-position-backpack-lg($item-num) {
+    @if ($item-num <= 36 and $item-num >= 1) {
+        @if ($item-num <= 12 and $item-num >= 1) {
+            bottom: $item-contextual-menu-pane-backpack-lg-row1-bottom;
+            @if ($item-num <= 6) {
+              left: $item-contextual-menu-pane-backpack-lg-left-start +
+                    $item-contextual-menu-pane-backpack-lg-distance * ($item-num - 1);
+            } @else {
+              right: $item-contextual-menu-pane-backpack-lg-right-start +
+                     $item-contextual-menu-pane-backpack-lg-distance *
+                     ( ($item-num - 12) * -1 );
+            }
+        }
+        @if ($item-num <= 24 and $item-num >= 13) {
+            bottom: $item-contextual-menu-pane-backpack-lg-row2-bottom;
+            @if ($item-num <= 18) {
+              left: $item-contextual-menu-pane-backpack-lg-left-start +
+                    $item-contextual-menu-pane-backpack-lg-distance * ($item-num - 13);
+            } @else {
+              right: $item-contextual-menu-pane-backpack-lg-right-start +
+                     $item-contextual-menu-pane-backpack-lg-distance *
+                     ( ($item-num - 24) * -1 );
+            }
+        }
+        @if ($item-num <= 36 and $item-num >= 25) {
+            bottom: $item-contextual-menu-pane-backpack-lg-row3-bottom;
+            @if ($item-num <= 30) {
+              left: $item-contextual-menu-pane-backpack-lg-left-start +
+                    $item-contextual-menu-pane-backpack-lg-distance * ($item-num - 25);
+            } @else {
+              right: $item-contextual-menu-pane-backpack-lg-right-start +
+                     $item-contextual-menu-pane-backpack-lg-distance *
+                     ( ($item-num - 36 ) * -1 );
+            }
+        }
+    }
+}
+@mixin item-contextual-menu-pane-position-backpack-md($item-num) {
+  @if ($item-num <= 36 and $item-num >= 1) {
+      @if ($item-num <= 12 and $item-num >= 1) {
+          bottom: $item-contextual-menu-pane-backpack-md-row1-bottom;
+          @if ($item-num <= 6) {
+            left: $item-contextual-menu-pane-backpack-md-left-start +
+                  $item-contextual-menu-pane-backpack-md-distance * ($item-num - 1);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-md-right-start +
+                   $item-contextual-menu-pane-backpack-md-distance *
+                   ( ($item-num - 12) * -1 );
+          }
+      }
+      @if ($item-num <= 24 and $item-num >= 13) {
+          bottom: $item-contextual-menu-pane-backpack-md-row2-bottom;
+          @if ($item-num <= 18) {
+            left: $item-contextual-menu-pane-backpack-md-left-start +
+                  $item-contextual-menu-pane-backpack-md-distance * ($item-num - 13);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-md-right-start +
+                   $item-contextual-menu-pane-backpack-md-distance *
+                   ( ($item-num - 24) * -1 );
+          }
+      }
+      @if ($item-num <= 36 and $item-num >= 25) {
+          bottom: $item-contextual-menu-pane-backpack-md-row3-bottom;
+          @if ($item-num <= 30) {
+            left: $item-contextual-menu-pane-backpack-md-left-start +
+                  $item-contextual-menu-pane-backpack-md-distance * ($item-num - 25);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-md-right-start +
+                   $item-contextual-menu-pane-backpack-md-distance *
+                   ( ($item-num - 36 ) * -1 );
+          }
+      }
+  }
+}
+@mixin item-contextual-menu-pane-position-backpack-sm($item-num) {
+  @if ($item-num <= 36 and $item-num >= 1) {
+      @if ($item-num <= 12 and $item-num >= 1) {
+          bottom: $item-contextual-menu-pane-backpack-sm-row1-bottom;
+          @if ($item-num <= 6) {
+            left: $item-contextual-menu-pane-backpack-sm-left-start +
+                  $item-contextual-menu-pane-backpack-sm-distance * ($item-num - 1);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-sm-right-start +
+                   $item-contextual-menu-pane-backpack-sm-distance *
+                   ( ($item-num - 12) * -1 );
+          }
+      }
+      @if ($item-num <= 24 and $item-num >= 13) {
+          bottom: $item-contextual-menu-pane-backpack-sm-row2-bottom;
+          @if ($item-num <= 18) {
+            left: $item-contextual-menu-pane-backpack-sm-left-start +
+                  $item-contextual-menu-pane-backpack-sm-distance * ($item-num - 13);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-sm-right-start +
+                   $item-contextual-menu-pane-backpack-sm-distance *
+                   ( ($item-num - 24) * -1 );
+          }
+      }
+      @if ($item-num <= 36 and $item-num >= 25) {
+          bottom: $item-contextual-menu-pane-backpack-sm-row3-bottom;
+          @if ($item-num <= 30) {
+            left: $item-contextual-menu-pane-backpack-sm-left-start +
+                  $item-contextual-menu-pane-backpack-sm-distance * ($item-num - 25);
+          } @else {
+            right: $item-contextual-menu-pane-backpack-sm-right-start +
+                   $item-contextual-menu-pane-backpack-sm-distance *
+                   ( ($item-num - 36 ) * -1 );
+          }
+      }
+  }
+}
+@mixin item-contextual-menu-pane-position-backpack-xs($item-num) {
+    @if ($item-num <= 6 and $item-num >= 1) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row1-bottom;
+    }
+    @if ($item-num <= 12 and $item-num >= 7) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row2-bottom;
+    }
+    @if ($item-num <= 18 and $item-num >= 13) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row3-bottom;
+    }
+    @if ($item-num <= 24 and $item-num >= 19) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row4-bottom;
+    }
+    @if ($item-num <= 30 and $item-num >= 25) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row5-bottom;
+    }
+    @if ($item-num <= 36 and $item-num >= 31) {
+        bottom: $item-contextual-menu-pane-backpack-xs-row6-bottom;
+    }
+}
+
+@for $backpackItemNum from 1 through 36 {
+    .itemContextualMenuPane-backpack-item-#{$backpackItemNum}-pos {
+        @include media-query-lg-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-backpack-lg($backpackItemNum);
+        }
+        @include media-query-md-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-backpack-md($backpackItemNum);
+        }
+        @include media-query-sm-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-backpack-sm($backpackItemNum);
+        }
+        @include media-query-xs-bstrap-pattern() {
+            @include item-contextual-menu-pane-position-backpack-xs($backpackItemNum);
+        }
+    }
+}

@@ -36,6 +36,9 @@
                     <li class="tab2-nav-btn">
                         <a data-ng-click="clickNavBtn2('narrow')" data-ng-bind="labelTab2"></a>
                     </li>
+                    <li class="tab3-nav-btn">
+                        <a data-ng-click="clickNavBtn3('narrow')" data-ng-bind="labelTab3"></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -72,6 +75,9 @@
                   <li class="tab2-nav-btn">
                       <a data-ng-click="clickNavBtn2('wide')" data-ng-bind="labelTab2"></a>
                   </li>
+                  <li class="tab3-nav-btn">
+                      <a data-ng-click="clickNavBtn3('wide')" data-ng-bind="labelTab3"></a>
+                  </li>
               </ul>
           </nav>
       </div>
@@ -82,5 +88,6 @@
         <div data-ng-include="'get_partials/main-tab1.html'" data-ng-show="showContainer == '1'"></div>
         <div data-ng-include="'get_partials/main-tab1-edit.html'" data-ng-show="showContainer == '1e'"></div>
         <div data-ng-include="'get_partials/main-tab2.html'" data-ng-show="showContainer == '2'"></div>
+        <div data-ng-include="'get_partials/main-tab3.html'" data-ng-show="showContainer == '3'"></div>
     </div>
 </section>

@@ -1,0 +1,27 @@
+.register-form-left-col {
+    text-align: right; padding-top: 5px;
+    @include media-query-narrow() {
+        text-align: left !important; padding-bottom: 5px;
+    }
+}
+.register-form-right-col {
+    margin-bottom: 10px;
+    input {
+        @extend .user-form-input;
+    }
+}
+.register-form-btn-left-col, .register-form-btn-ctr-col, .register-form-btn-right-col {
+    padding-top: 20px;
+    button {
+        @extend .user-form-btn;
+    }
+}
+.register-form-btn-ctr-col {
+    @include form-btn-ctr-col(35px);
+}
+.register-form-btn-left-col {
+    overflow: hidden;
+    button {
+        float: right;
+    }
+}

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400&subset=latin,latin-ext');
+
 $base-screen-width: 768px;
+
 @mixin media-query-wide() {
     @media print, screen and (min-width: #{$base-screen-width}) { @content; }
 }
@@ -9,12 +11,29 @@ $base-screen-width: 768px;
 @mixin media-query-narrow() {
     @media print, screen and (max-width: #{$base-screen-width - 1px}) { @content; }
 }
+
+@mixin media-query-lg-bstrap-pattern() {
+    @media print, screen and (min-width: #{$base-screen-width + 432px}) { @content; }
+}
+@mixin media-query-md-bstrap-pattern() {
+    @media print, screen and (min-width: #{$base-screen-width + 224px})
+                         and (max-width: #{$base-screen-width + 431px}) { @content; }
+}
+@mixin media-query-sm-bstrap-pattern() {
+    @media print, screen and (min-width: #{$base-screen-width})
+                         and (max-width: #{$base-screen-width + 223px}) { @content; }
+}
+@mixin media-query-xs-bstrap-pattern() {
+    @media print, screen and (max-width: #{$base-screen-width - 1px}) { @content; }
+}
+
 @mixin site-bg-colour($rgb1, $rgb2, $rgb3, $rgb4, $rgb5, $rgb6) {
-    background: linear-gradient(-45deg, $rgb1 0%, $rgb2 37%, $rgb3 47%, $rgb4 57%,
+    background: linear-gradient(0deg, $rgb1 0%, $rgb2 37%, $rgb3 47%, $rgb4 57%,
                                 $rgb5 78%, $rgb6 100%);
-    background: -webkit-linear-gradient(135deg, $rgb1 0%, $rgb2 37%, $rgb3 47%,
+    background: -webkit-linear-gradient(180deg, $rgb1 0%, $rgb2 37%, $rgb3 47%,
                                         $rgb4 57%, $rgb5 78%, $rgb6 100%);
 }
+
 @mixin nav-justified-bg-colour($frmColour, $toColour) {
     /* Old browsers */
     background-image: -webkit-gradient(linear, left top, left bottom,
@@ -26,10 +45,12 @@ $base-screen-width: 768px;
                                                        endColorstr='$toColour',
                                                        GradientType=0);
 }
+
 @mixin nav-justified-box-shadow($arg) {
     -webkit-box-shadow: $arg;
     box-shadow: $arg;
 }
+
 @mixin form-btn-ctr-col($arg) {
     & > div {
         margin: 0 auto; width: $arg; padding-top: 8px;
@@ -44,43 +65,53 @@ $base-screen-width: 768px;
         display: none;
     }
 }
+
 .inheritance_1 {
     height: 100%;
 }
+
 .inheritance_2 {
     font-style: italic; color:#777; text-decoration: none; cursor: pointer;
 }
+
 .inheritance_3 {
     border-radius: 0px; height: 31px;background-color: rgba(255, 255, 255, 0);
     box-shadow: none; -webkit-box-shadow: none;
 }
+
 .user-form-input {
     @extend .inheritance_3;
     border-bottom: 1px solid #777; border-top: 0px; border-left: 0px;
     border-right: 0px;
 }
+
 .user-form-text-area {
     @extend .inheritance_3;
     border: 1px solid #777; resize: none;
 }
+
 .user-form-input-error {
     border-bottom-color: red !important; /* for input field */
     color: red !important; /* for input label */
 }
+
 .user-form-btn-non-hover {
     background-color: #E6E6E6; color: #777; border-color: #46B8DA;
 }
+
 .user-form-btn {
     @extend .user-form-btn-non-hover;
     &:hover {
         background-color: #46B8DA; color: #FFF; border-color: #46B8DA;
     }
 }
+
 .logged-in-user-form-btn {
     &:hover {
         background-color: #46B8DA; color: #FFF; border-color: #46B8DA;
     }
 }
+
 .not-logged-in-user-form-btn {
     @include media-query-wide() {
         width: 15%;
@@ -95,6 +126,7 @@ $base-screen-width: 768px;
         background-color: #449D44; color: #FFF; border-color: #398439;
     }
 }
+
 html {
     @extend .inheritance_1;
 }
@@ -124,7 +156,7 @@ a {
 }
 .footer {
     position: fixed; bottom: 0; width: 100%; height: 60px;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; z-index: 9;
     .container p {
         text-align: center; margin: 20px 0;
     }
@@ -177,6 +209,7 @@ a {
         }
     }
 }
+
 /*** mobile header ***/
 #angularjs-test-fixed-navbar {
     @include media-query-wide() {
@@ -188,6 +221,7 @@ a {
         display: block;
     }
 }
+
 /*** default header ***/
 .masthead {
     @include media-query-wide() {
@@ -213,102 +247,8 @@ a {
         @extend .inheritance_2;
     }
 }
-.register-form-left-col {
-    text-align: right; padding-top: 5px;
-    @include media-query-narrow() {
-        text-align: left !important; padding-bottom: 5px;
-    }
-}
-.register-form-right-col {
-    margin-bottom: 10px;
-    input {
-        @extend .user-form-input;
-    }
-}
-.register-form-btn-left-col, .register-form-btn-ctr-col, .register-form-btn-right-col {
-    padding-top: 20px;
-    button {
-        @extend .user-form-btn;
-    }
-}
-.register-form-btn-ctr-col {
-    @include form-btn-ctr-col(35px);
-}
-.register-form-btn-left-col {
-    overflow: hidden;
-    button {
-        float: right;
-    }
-}
-.login-form-label {
-    padding-top: 5px;
-}
-.login-form-username-label {
-    @extend .login-form-label; text-align: right;
-    @include media-query-medium() {
-        text-align: left; margin: 0 0 5px 0;
-    }
-    @include media-query-narrow() {
-        text-align: left; margin: 10px 0 5px 0;
-    }
-}
-.login-form-password-label {
-    @extend .login-form-label;
-    @include media-query-wide() {
-        display: block;
-    }
-    @include media-query-medium() {
-        display: none;
-    }
-    @include media-query-narrow() {
-        display: none;
-    }
-}
-.login-form-password-label-narrow-view {
-    @extend .login-form-label;
-    @include media-query-wide() {
-        display: none;
-    }
-    @include media-query-medium() {
-        display: block; margin: 10px 0 5px 0;
-    }
-    @include media-query-narrow() {
-        display: block; margin: 10px 0 5px 0;
-    }
-}
-.login-form-password-input {
-    @include media-query-wide() {
-        text-align: right;
-    }
-    @include media-query-medium() {
-        text-align: left;
-    }
-    @include media-query-narrow() {
-        text-align: left;
-    }
-}
-.login-form-label-ctr-col {
-    @extend .login-form-label; margin: 0 auto; width: 45px;
-    @include media-query-medium() {
-        display: none;
-    }
-    @include media-query-narrow() {
-        display: none;
-    }
-}
-.login-form-btn-section {
-    margin-top: 20px;
-    & > div:first-child {
-      display: none;
-      @include media-query-medium() {
-          display: block;
-      }
-    }
-}
-.login-form-btn-ctr-col {
-    margin-top: 20px;
-    @include form-btn-ctr-col(33px);
-}
+
+/*** Others ***/
 .top-announcement-bar {
     @include media-query-wide() {
       margin-bottom:15px;
@@ -329,43 +269,18 @@ a {
         @extend .inheritance_2;
     }
 }
-.main-tab-1-create-task-menu {
-  @include media-query-wide() {
-      input { width: 60% !important; }
-  }
-  @include media-query-medium() {
-      input { width: 45% !important; }
-  }
-  @include media-query-narrow() {
-      display: none !important;
-  }
-}
-.main-tab-1-create-task-menu-narrow {
-  @include media-query-wide() {
-      /* width: 85% !important; */
-      display: none !important;
-  }
-}
-.main-tab1-custom-input-1-left {
-    width: 97% !important;
-}
-.main-tab1-custom-input-1-right {
-    @include media-query-wide() {
-        width: 75% !important;
-    }
-}
-.main-tab-1-detail-page-last-row {
-    margin-top: 10px; margin-left: 30px;
-    a:hover {
-        @extend .inheritance_2;
-    }
-}
-.todo-list-entry-title {
-    padding-top: 7px;
-}
-.btn-narrow-view-make-it-small {
-    @include media-query-narrow() {
-        // emulate btn-sm bootstrap class
-        padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius:3px;
-    }
-}
+
+/*** Register Page ***/
+@import 'registerPage';
+
+/*** Login Page ***/
+@import 'loginPage';
+
+/*** Todo List (Tab #1) ***/
+@import 'todoList';
+
+/*** Main Game (Tab #2) ***/
+@import 'mainGame';
+
+/*** Main Game (Tab #2) - Control panel ***/
+@import 'mainGameControlPanel';

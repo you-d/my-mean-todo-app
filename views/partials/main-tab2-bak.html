@@ -1,0 +1,302 @@
+<div class="space-for-footer tab2" data-ng-controller="TodoListController">
+  <div class="content-block-mobile-view-adjuster"></div>
+  <!-- Row 1 -->
+  <div class="row tab2-statusRow">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tab2-statusRow-left">
+          <div>Lv.</div>
+          <div>7</div>
+          <div>+++++++++++++++++++++++++</div>
+          <hr/>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tab2-statusRow-general">
+          <div>HP</div>
+          <div>100</div>
+          /
+          <div>100</div>
+          <div>+++++++++++++++++++++++++</div>
+          <hr/>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tab2-statusRow-general">
+          <div>EN</div>
+          <div>100</div>
+          /
+          <div>100</div>
+          <div>+++++++++++++++++++++++++</div>
+          <hr/>
+      </div>
+  </div>
+  <!-- Row 2 -->
+  <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <!-- set the canvas width, & height attributes to the original size of the image,
+               then we scale the canvas up or down in the css. -->
+          <canvas id="mainGameCanvas" width="321" height="224">
+            <p>Your browser does not support the required functionality to play this game.</p>
+            <p>Please update to a modern browser such as <a href="www.google.com/chrome/‎">Google Chrome</a> to play.</p>
+          </canvas>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 tab2-gameCanvasRow-col2">
+          <div>
+            <div>Action Points</div>
+            <hr>
+            <div>
+                <span>2573</span>&nbsp;&nbsp;<span>Pts</span>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 tab2-gameCanvasRow-col2-row2">
+          <div>
+              <div>
+                  <div>Fatique</div>
+                  <div>|</div>
+                  <div>++++++++++++++++++++++++++++++</div>
+                  <hr>
+              </div>
+              <div>
+                  <div>Battery</div>
+                  <div>|</div>
+                  <div>++++++++++++++++++++++++++++++</div>
+                  <hr>
+              </div>
+              <div>
+                  <div>Money</div>
+                  <div>|</div>
+                  <div>105348</div>
+                  <hr>
+              </div>
+              <div>
+                  <div>Status</div>
+                  <div>|</div>
+                  <div>Fine</div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 tab2-gameCanvasRow-col2-row3">
+         <div>
+            <div>Active Missions</div>
+            <hr>
+            <div>
+                <div><span>[+]</span>&nbsp;<span>Find item A</span></div>
+                <div><span>[+]</span>&nbsp;<span>Find heart shaped key</span></div>
+                <div><span>[+]</span>&nbsp;<span>Check Supermarket</span></div>
+                <div><span>[+]</span>&nbsp;<span>Hunt monster x</span></div>
+                <!--
+                <div><span>[+]</span>&nbsp;<span>Hunt monster Y</span></div>
+                <div><span>[+]</span>&nbsp;<span>Hunt monster Z</span></div>
+                <div><span>[+]</span>&nbsp;<span>Find item B</span></div>
+                -->
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 tab2-equPockets-wrapper">
+          <div class="tab2-equPockets">
+              <div>Pockets</div>
+              <hr>
+              <div class="row">
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_supplycrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ammocrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_h_icon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_gasoline"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_yellow_beacon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_firstaidkit"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_battery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_smallbattery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_canned_food"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_fruits"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_key"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ampoule"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 tab2-gameCanvasRow-col2-row3-xs">
+         <div>
+            <div>Active Missions</div>
+            <hr>
+            <div>
+                <div><span>[+]</span>&nbsp;<span>Find item A</span></div>
+                <div><span>[+]</span>&nbsp;<span>Find heart shaped key</span></div>
+                <div><span>[+]</span>&nbsp;<span>Check Supermarket</span></div>
+                <div><span>[+]</span>&nbsp;<span>Hunt monster x</span></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tab2-bottomright-box">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6" onclick="toggleDisplayMissionsPanel();">[Missions]</div>
+              <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">[Backpack]</div>
+              <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">[Store]</div>
+              <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">[Save Game]</div>
+          </div>
+      </div>
+  </div>
+  <div id="backpackPanel" class="row" style="display:none;">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 mainGameControlPanelWrapper-2cols">
+          <div class="mainGameControlPanel-2cols">
+              <div>Backpack</div>
+              <hr>
+              <div class="row">
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_supplycrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ammocrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_h_icon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_gasoline"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_yellow_beacon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_firstaidkit"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_battery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_smallbattery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_canned_food"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_fruits"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_key"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ampoule"></div>
+                  </div>
+                  <!-- -->
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_supplycrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ammocrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_h_icon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_gasoline"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_yellow_beacon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_firstaidkit"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_battery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_smallbattery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_canned_food"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_fruits"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_key"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ampoule"></div>
+                  </div>
+                  <!-- -->
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_supplycrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ammocrate"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_h_icon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_gasoline"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_yellow_beacon"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_firstaidkit"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_battery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_smallbattery"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_canned_food"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_fruits"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_key"></div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                      <div class="gameitem_ampoule"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Backpack - info -->
+      <div class="col-lg-4 col-md-4 cold-sm-12 col-xs-12 mainGameControlPanelWrapper-2cols-col2">
+          <div class="mainGameControlPanel-2cols-col2">
+              <hr>
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                      Capacity : 36/36
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                      Weight : 10kg/25kg
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="missionsPanel" class="row mainGameControlPanelWrapper">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainGameControlPanel">
+          <div>Missions</div>
+          <hr>
+          <div id="test">adadadada</div>
+      </div>
+  </div>
+</div>
+<!-- Main Game Script -->
+<script type="text/javascript" src="/dist/mainGame.min.js"></script>
+<!-- React Components -->
+<script type="text/javascript" src="/dist/reactComponents.bundle.js"></script>
+<script type="text/javascript" src="/dist/jquerytest.js"></script>
