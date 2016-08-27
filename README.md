@@ -1,6 +1,6 @@
 #my-mean-todo-app
 
-status : Discontinued 
+status : Discontinued   
 Reason : Obsolete - Jumping into Angular.JS 2 and Redux based React.JS   
 
 A fully responsive, single page web application that utilises MEAN stack technologies, and React.JS. The web app itself is a HTML5 canvas based game that allows users to interact with the game through React.JS built User Interface. The plan is to make the game mechanic to be tied to the To Do List section of the web app written in Angular.JS. Therefore front end wise, this web app utilises a mix of Angular.JS, and React.JS code to handle the presentation, and controller layer of the web app.
